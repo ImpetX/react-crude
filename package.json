@@ -1,0 +1,52 @@
+{
+  "name": "react-crude",
+  "version": "0.1.0",
+  "description": "A CRUD app using react, redux, firbase",
+  "main": "index.js",
+  "scripts": {
+     "start": "http-server -c-1 -o -p 7000 ./",
+     "dev": "webpack -w"
+   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ImpetX/react-crude.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "react-router",
+    "webpack2",
+    "firebase",
+    "react-toolbox"
+  ],
+  "author": "ImpetX",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ImpetX/react-crude/issues"
+  },
+  "homepage": "https://github.com/ImpetX/react-crude#readme",
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "babel-runtime": "^6.20.0",
+    "eslint": "^3.14.1",
+    "eslint-plugin-react": "^6.9.0",
+    "firebase": "^3.6.10",
+    "redux-devtools": "^3.3.2",
+    "redux-logger": "^2.8.1",
+    "redux-thunk": "^2.2.0",
+    "webpack": "^2.2.0"
+  },
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.2",
+    "react-router": "^3.0.2",
+    "redux": "^3.6.0"
+  }
+}
