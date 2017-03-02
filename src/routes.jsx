@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 
-import Home from './modules/home/Home';
-import Hello from './modules/hello/Hello';
-import Kamal from './modules/persons/Kamal';
-import Jamal from './modules/persons/Jamal';
+import Home from './modules/home/components/Home';
+import Hello from './modules/hello/components/Hello';
+import Kamal from './modules/persons/components/Kamal';
+import Jamal from './modules/persons/components/Jamal';
 
 export default class Routes extends Component {
     render() {
