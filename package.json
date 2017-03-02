@@ -4,9 +4,9 @@
   "description": "A CRUD app using react, redux, firbase",
   "main": "index.js",
   "scripts": {
-     "start": "http-server -c-1 -o -p 7000 ./",
-     "dev": "webpack -w"
-   },
+    "start": "http-server -c-1 -o -p 7000 ./",
+    "dev": "webpack -w"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ImpetX/react-crude.git"
@@ -40,7 +40,8 @@
     "redux-devtools": "^3.3.2",
     "redux-logger": "^2.8.1",
     "redux-thunk": "^2.2.0",
-    "webpack": "^2.2.0"
+    "webpack": "^2.2.0",
+    "webpack-bundle-analyzer": "^2.3.0"
   },
   "dependencies": {
     "react": "^15.4.2",

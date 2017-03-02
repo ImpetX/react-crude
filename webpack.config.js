@@ -1,6 +1,6 @@
 var path = require('path');
-
-console.log(path.join(__dirname, 'src'));
+var webpack = require('webpack');
+var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 var config = {
 
@@ -16,14 +16,15 @@ var config = {
         ]
     },
 
-    entry: [
-        'babel-polyfill',
-        './src/index.jsx'
-    ],
+    entry: {
+        main: './src/index.jsx'
+    },
 
     output: {
         path: path.resolve(__dirname, 'public'),
-        filename: 'bundle.js'
+        filename: '[name].js',
+        // chunkFilename is required for CommonsChunkPlugin
+        chunkFilename: '[name].js'
     },
 
     module: {
@@ -36,7 +37,31 @@ var config = {
 
             }
         ]
-    }
+    },
+
+    plugins: [
+        new BundleAnalyzerPlugin({
+            analyzerMode: 'static',
+            reportFilename: 'webpack-bundle-report.html',
+            openAnalyzer: true
+        }),
+
+        // building all the 3rd party modules into vendor js
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            minChunks(module) {
+               return module.context && module.context.indexOf('node_modules') !== -1;
+           },
+       }),
+
+       /*
+        Generating a seperate file for webpack runtime code.
+        this file must be loaded first via script tag
+        */
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'manifest'
+       })
+    ]
 };
 
 module.exports = config;
