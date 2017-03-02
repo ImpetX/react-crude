@@ -42,8 +42,8 @@ var config = {
     plugins: [
         new BundleAnalyzerPlugin({
             analyzerMode: 'static',
-            reportFilename: 'webpack-bundle-report.html',
-            openAnalyzer: true
+            reportFilename: 'webpack-bundle-report.html'
+            //openAnalyzer: true
         }),
 
         // building all the 3rd party modules into vendor js
