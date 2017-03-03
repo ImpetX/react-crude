@@ -29,7 +29,9 @@ var config = {
 
         alias: {
             modules: path.resolve(__dirname, 'src/modules'),
-            images: path.resolve(__dirname, 'src/assets/images')
+            styles: path.resolve(__dirname, 'src/stylesheet'),
+            images: path.resolve(__dirname, 'src/assets/images'),
+            fonts: path.resolve(__dirname, 'src/assets/fonts')
         }
     },
 
@@ -65,7 +67,7 @@ var config = {
                                 options: {
                                     sourceMap: true,
                                     modules: true,
-                                    localIdentName: '[path][name]__[local]--[hash:base64:5]'
+                                    localIdentName: '[name]-[local][hash:base64:5]'
                                 }
                             }
                         ]
@@ -74,7 +76,7 @@ var config = {
             },
 
             {
-                test: /\.(jpg|png|svg)?$/,
+                test: /\.(jpg|png|svg|ttf|woff|woff2|otf)?$/,
                 loader: 'url-loader?limit=10000'
             }
         ]

@@ -13,6 +13,8 @@
 
 .bg {
     background-image: url('images/horizon.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .hello {

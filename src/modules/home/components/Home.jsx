@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
 
+import 'styles/main';
+
 export default class Home extends Component {
     render() {
         return (
@@ -10,6 +12,7 @@ export default class Home extends Component {
 
                 <div>
                     {this.props.children}
+                    <img src='./src/assets/images/smiley.svg' alt='smiley face' style={{height: '40px'}}/>
                 </div>
             </div>
         );
