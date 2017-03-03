@@ -1,19 +1,36 @@
+/* eslint no-var: "off" */
+
 var path = require('path');
 var webpack = require('webpack');
 var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var config = {
 
-    devtool: 'cheap-module-eval-source-map',
+    /*
+        best option for development::
+
+        devtool: 'cheap-module-eval-source-map'
+
+        but due to the requirement of css modules for generating sourcemap
+        'source-map' is used.
+    */
+    devtool: 'source-map',
 
     resolve: {
         extensions: [
-            '.js', ".jsx"
+            '.js', ".jsx", '.css'
         ],
+
         modules: [
             'node_modules',
             path.resolve(__dirname, 'src')
-        ]
+        ],
+
+        alias: {
+            modules: path.resolve(__dirname, 'src/modules'),
+            images: path.resolve(__dirname, 'src/assets/images')
+        }
     },
 
     entry: {
@@ -35,6 +52,30 @@ var config = {
                 exclude: /node_modules/,
                 loader: 'babel-loader'
 
+            },
+
+            {
+                test: /\.css?$/,
+                use: ExtractTextPlugin.extract(
+                    {
+                        fallback: "style-loader",
+                        use: [
+                            {
+                                loader: 'css-loader',
+                                options: {
+                                    sourceMap: true,
+                                    modules: true,
+                                    localIdentName: '[path][name]__[local]--[hash:base64:5]'
+                                }
+                            }
+                        ]
+                    }
+                )
+            },
+
+            {
+                test: /\.(jpg|png|svg)?$/,
+                loader: 'url-loader?limit=10000'
             }
         ]
     },
@@ -50,9 +91,9 @@ var config = {
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
             minChunks(module) {
-               return module.context && module.context.indexOf('node_modules') !== -1;
-           },
-       }),
+                return module.context && module.context.indexOf('node_modules') !== -1;
+            },
+        }),
 
        /*
         Generating a seperate file for webpack runtime code.
@@ -60,7 +101,9 @@ var config = {
         */
         new webpack.optimize.CommonsChunkPlugin({
             name: 'manifest'
-       })
+        }),
+
+        new ExtractTextPlugin("styles.css")
     ]
 };
 

@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 
-import Hello from '../../hello/components/Hello';
+import Hello from 'modules/hello/components/Hello';
+
+import styles from './css/Jamal'
 
 export default class Jamal extends Component {
     render() {
-        return <Hello name='Jamal'/>
+        return <Hello name='Jamal' className={styles.hello}/>
     }
 }

@@ -1,0 +1,16 @@
+/*
+    @author: Kamal Sharif
+
+    @createdAt: 3.3.2017
+    @lastModified: 3.3.2017
+    @modifiedBy: Kamal Sharif
+
+    @moduleName: persons
+    @modulePath: ./src/modules/persons
+    @fileName: Jamal.css
+    @filePath: ./src/modules/hello/components/css/Jamal.css
+*/
+
+.hello {
+    color: #ff00ff;
+}

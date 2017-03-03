@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import Hello from '../../hello/components/Hello';
+import Hello from 'modules/hello/components/Hello';
 
 export default class Kamal extends Component {
     render() {

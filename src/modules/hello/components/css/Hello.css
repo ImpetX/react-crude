@@ -1,0 +1,20 @@
+/*
+    @author: Kamal Sharif
+
+    @createdAt: 3.3.2017
+    @lastModified: 3.3.2017
+    @modifiedBy: Kamal Sharif
+
+    @moduleName: hello
+    @modulePath: ./src/modules/hello
+    @fileName: Hello.css
+    @filePath: ./src/modules/hello/components/css/Hello.css
+*/
+
+.bg {
+    background-image: url('images/horizon.jpg');
+}
+
+.hello {
+    color: #ff0000;
+}
