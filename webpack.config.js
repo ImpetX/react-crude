@@ -67,8 +67,13 @@ var config = {
                                 options: {
                                     sourceMap: true,
                                     modules: true,
-                                    localIdentName: '[name]-[local][hash:base64:5]'
+                                    localIdentName: '[name]-[local][hash:base64:5]',
+                                    importLoaders: 1
                                 }
+                            },
+
+                            {
+                                loader: 'postcss-loader'
                             }
                         ]
                     }
