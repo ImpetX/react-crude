@@ -1,4 +1,5 @@
 var autoprefixer = require('autoprefixer');
+var cssnext = require('postcss-cssnext');
 
 module.exports = {
     plugins: [
@@ -6,6 +7,8 @@ module.exports = {
             {
                 browsers: 'last 10 versions'
             }
-        )
+        ),
+
+        cssnext()
     ]
 }
