@@ -125,3 +125,7 @@ bower_components
 public
 typings
 npm-debug.log.*
+
+# react-storybook
+stories
+.storybook
