@@ -1,0 +1,7 @@
+.wrapper {
+    composes: base-font from '../../../../stylesheet/utils/utils.css';
+    font-weight: 400;
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}

@@ -9,6 +9,6 @@
     @filePath: ./src/stylesheet/utils/utils.css
 */
 
-/*
-    utility classes goes here
-*/
+.base-font {
+    font-family: 'Lora', serif;
+}
