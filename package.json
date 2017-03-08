@@ -6,7 +6,7 @@
   "scripts": {
     "start": "http-server -c-1 -o -p 7000 ./",
     "dev": "webpack -w",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -s ./stories -p 6006",
     "build-storybook": "build-storybook"
   },
   "repository": {

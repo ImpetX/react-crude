@@ -1,0 +1,20 @@
+/*
+    @author: Kamal Sharif
+
+    @createdAt: 8.3.2017
+    @lastModified: 8.3.2017
+    @modifiedBy: Kamal Sharif
+
+    @moduleName: authentication
+    @modulePath: ./src/modules/authentication
+    @fileName: Logo.css
+    @filePath: ./src/modules/authentication/components/css/Logo.css
+*/
+
+.wrapper {
+    display: inline-block;
+}
+
+.logo {
+    width: 115px;
+}
