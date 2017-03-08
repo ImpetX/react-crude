@@ -1,0 +1,32 @@
+/*
+    @author: Kamal Sharif
+
+    @createdAt: 7.3.2017
+    @lastModified: 8.3.2017
+    @modifiedBy: Kamal Sharif
+
+    @moduleName: authentication
+    @modulePath: ./src/modules/authentication
+    @fileName: Button.css
+    @filePath: ./src/modules/authentication/components/css/Theme/Button.css
+*/
+
+.button {
+    height: 48px;
+    min-width: 120px;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: none;
+}
+
+.button:not([disabled]).raised, .button[disabled] {
+    color: #fff;
+}
+
+.button:not([disabled]).raised {
+    background-color: #9c27b0;
+}
+
+.button[disabled] {
+    background-color: rgba(156, 39, 176, 0.7);
+}

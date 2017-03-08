@@ -1,0 +1,21 @@
+/*
+    @author: Kamal Sharif
+
+    @createdAt: 7.3.2017
+    @lastModified: 8.3.2017
+    @modifiedBy: Kamal Sharif
+
+    @moduleName: authentication
+    @modulePath: ./src/modules/authentication
+    @fileName: Input.css
+    @filePath: ./src/modules/authentication/components/css/Theme/Input.css
+*/
+
+.bar::before, .bar::after {
+    background-color: #9c27b0;
+}
+
+.inputElement:focus:not([disabled]):not([readonly]) ~ .label:not(.fixed) {
+    font-size: 14px;
+    color: #9c27b0;
+}
