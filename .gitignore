@@ -127,5 +127,5 @@ typings
 npm-debug.log.*
 
 # react-storybook
-stories
-.storybook
+//stories
+//.storybook
