@@ -51,4 +51,14 @@ ul {
   padding: 0; }
 
 li {
-  list-style: none; }
+  list-style: none;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+a:focus {
+    outline: none;
+}

@@ -32,13 +32,13 @@ export default class Login extends Component {
         return (
             <div className={Styles.wrapper}>
                 <Logo href='#' src='./assets/images/logo/logo.svg' />
-                    <form onSubmit={this.props.handleSubmit}>
+                <form onSubmit={this.props.handleSubmit}>
                     <div className={Styles.inputs}>
                         <Input type='email' label='Email' theme={InputTheme} value={this.state.email} onChange={this.handleEmailChange}/>
                         <Input type='password' label='Password' theme={InputTheme} value={this.state.password} onChange={this.handlePasswordChange} />
                     </div>
-                        <Button type='submit' label='Log in' raised theme={ButtonTheme}/>
-                    </form>
+                    <Button type='submit' label='Log in' raised theme={ButtonTheme}/>
+                </form>
 
             </div>
         );

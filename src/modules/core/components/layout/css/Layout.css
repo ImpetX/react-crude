@@ -1,0 +1,90 @@
+/*
+    @author: Kamal Sharif
+
+    @createdAt: 12.3.2017
+    @lastModified: 12.3.2017
+    @modifiedBy: Kamal Sharif
+
+    @moduleName: Core
+    @modulePath: ./src/modules/core
+    @fileName: Layout.css
+    @filePath: ./src/modules/core/components/layout/css/Layout.css
+*/
+
+.wrapper {
+    width: auto;
+}
+
+.sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+
+    height: 100vh;
+    width: 150px;
+
+    background-color: #fff;
+    border-right: 1px solid #e6e6e6;
+}
+
+.logo-wrapper {
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.logo-link {
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    display: block;
+    overflow: hidden;
+    text-align: center;
+}
+
+.logo {
+    width: 85px;
+}
+
+.menus {
+    padding-top: 25px;
+}
+
+.menu {
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    font-size: 18px;
+    text-align: center;
+    transition: color 0.3s ease-in 0.1s;
+}
+
+.menu:hover {
+    color: rgba(51, 51, 51, 0.7);
+}
+
+.menu:focus, .active {
+    color: #fff;
+    background-color: #9c27b0;
+}
+
+.pagewrapper {
+    margin-left: 150px;
+}
+
+.username {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.icon {
+    height: 35px;
+    width: 35px;
+    display: inline-block;
+    vertical-align: text-top;
+}
+
+.caret {
+    position: relative;
+    top: 1px;
+    cursor: pointer;
+}
