@@ -47,6 +47,10 @@ h5, :global(.h5) {
 h6, :global(.h6) {
   font-size: 1.6rem; }
 
+p {
+    margin: 0;
+}
+
 ul {
   padding: 0; }
 

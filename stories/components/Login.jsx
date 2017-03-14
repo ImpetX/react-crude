@@ -4,6 +4,7 @@ import {Button} from 'react-toolbox/lib/button';
 
 import Logo from './Logo';
 
+import '../../node_modules/normalize.css/normalize.css';
 import '../../src/stylesheet/base/base.css';
 import Styles from '../../src/modules/authentication/components/css/Login.css';
 import InputTheme from '../../src/modules/authentication/components/css/Theme/Input.css';
