@@ -14,6 +14,9 @@ export default class Layout extends Component {
                 <Sidebar />
                 <div className={Styles.pagewrapper}>
                     <Navbar />
+                    <div className={Styles['content-wrapper']}>
+                        <h2>This is Content Page</h2>
+                    </div>
                 </div>
             </div>
         );

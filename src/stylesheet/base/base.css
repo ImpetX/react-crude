@@ -2,7 +2,7 @@
     @author: Kamal Sharif
 
     @createdAt: 3.3.2017
-    @lastModified: 3.3.2017
+    @lastModified: 15.3.2017
     @modifiedBy: Kamal Sharif
 
     @fileName: base.css
@@ -15,7 +15,6 @@ html {
   overflow-x: hidden;
   font-family: sans-serif;
   font-size: 0.625rem;
-  line-height: 2.4;
   -webkit-tap-highlight-color: transparent;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -26,8 +25,13 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 1.6rem;
+  line-height: 1.5;
   color: #333;
   background-color: #fff; }
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
 
 h1, :global(.h1) {
   font-size: 3.6rem; }
@@ -46,10 +50,6 @@ h5, :global(.h5) {
 
 h6, :global(.h6) {
   font-size: 1.6rem; }
-
-p {
-    margin: 0;
-}
 
 ul {
   padding: 0; }

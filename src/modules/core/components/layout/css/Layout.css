@@ -2,7 +2,7 @@
     @author: Kamal Sharif
 
     @createdAt: 12.3.2017
-    @lastModified: 14.3.2017
+    @lastModified: 15.3.2017
     @modifiedBy: Kamal Sharif
 
     @moduleName: Core
@@ -17,4 +17,8 @@
 
 .pagewrapper {
     margin-left: 150px;
+}
+
+.content-wrapper {
+    padding: 25px 15px 15px 25px;
 }

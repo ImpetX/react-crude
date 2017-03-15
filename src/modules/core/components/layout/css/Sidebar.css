@@ -2,7 +2,7 @@
     @author: Kamal Sharif
 
     @createdAt: 14.3.2017
-    @lastModified: 14.3.2017
+    @lastModified: 15.3.2017
     @modifiedBy: Kamal Sharif
 
     @moduleName: Core
@@ -47,15 +47,17 @@
 
 .menu {
     width: 100%;
+    padding: 10px 0;
     display: block;
     overflow: hidden;
     font-size: 18px;
     text-align: center;
-    transition: color 0.3s ease-in 0.1s;
+    background-color: #fff;
+    transition: background-color 0.3s ease-in 0.1s;
 }
 
 .menu:hover {
-    color: rgba(51, 51, 51, 0.7);
+    background-color: #e6e6e6;
 }
 
 .menu:focus, .active {
