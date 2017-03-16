@@ -3,6 +3,7 @@ import {storiesOf} from '@kadira/storybook';
 
 import Login from './components/Login';
 import Layout from './components/layout/Layout';
+import MemberList from './components/members/List';
 
 storiesOf('Login Component', module)
   .add('Login', () => (
@@ -10,6 +11,12 @@ storiesOf('Login Component', module)
   ));
 
 storiesOf('Layout Component', module)
-  .add('Layout', () => (
-      <Layout />
+    .add('Layout', () => (
+        <Layout />
+  ))
+
+  .add('Member List', () => (
+      <Layout>
+          <MemberList />
+      </Layout>
   ));

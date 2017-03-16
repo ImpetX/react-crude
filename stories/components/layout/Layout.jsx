@@ -15,10 +15,14 @@ export default class Layout extends Component {
                 <div className={Styles.pagewrapper}>
                     <Navbar />
                     <div className={Styles['content-wrapper']}>
-                        <h2>This is Content Page</h2>
+                        {this.props.children}
                     </div>
                 </div>
             </div>
         );
     }
+}
+
+Layout.propTypes = {
+    children: React.PropTypes.node
 }
