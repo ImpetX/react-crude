@@ -1,7 +1,20 @@
 import React, {Component} from 'react';
 
+import Searchbox from '../ui/Searchbox';
+
+import '../../../node_modules/normalize.css/normalize.css';
+import '../../../src/stylesheet/base/base.css';
+import Styles from '../../../src/modules/members/components/css/List.css';
+
 export default class MemberList extends Component {
     render() {
-        return <h1>Member List</h1>
+        return (
+            <div>
+                <div>
+                    <h1>Members <span>/</span> <span>List</span></h1>
+                </div>
+                <Searchbox />
+            </div>
+        );
     }
 }

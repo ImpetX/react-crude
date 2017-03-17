@@ -66,3 +66,11 @@ a {
 a:focus {
     outline: none;
 }
+
+input:focus {
+    outline: none;
+}
+
+::placeholder {
+    color: #b3b3b3;
+}
