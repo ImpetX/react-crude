@@ -8,7 +8,7 @@
     @moduleName: members
     @modulePath: ./src/modules/members
     @fileName: TooltipButton.css
-    @filePath: ./src/modules/members/components/css/TooltipButton.css
+    @filePath: ./src/modules/members/components/css/Theme/TooltipButton.css
 */
 
 .neutral:not([disabled]).floating {

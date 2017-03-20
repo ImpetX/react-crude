@@ -1,0 +1,59 @@
+/*
+    @author: Kamal Sharif
+
+    @createdAt: 17.3.2017
+    @lastModified: 20.3.2017
+    @modifiedBy: Kamal Sharif
+
+    @moduleName: members
+    @modulePath: ./src/modules/members
+    @fileName: List.css
+    @filePath: ./src/modules/members/components/css/List.css
+*/
+
+.header-wrapper, .searchbox-wrapper {
+    margin-bottom: 35px;
+}
+
+.header , .searchbox-wrapper, .footer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.heading, .totalentry {
+    flex: 1;
+}
+
+.heading {
+    font-size: 30px;
+    color: #666;
+}
+
+.slash {
+    color: #b3b3b3;
+}
+
+.subheading {
+    font-size: 24px;
+    color: #9c27b0;
+    opacity: 0.8;
+}
+
+.searchbox-wrapper {
+    justify-content: flex-end;
+}
+
+.table-wrapper {
+    margin-bottom: 25px;
+}
+
+.totalentry {
+    color: #666;
+}
+
+.totalentry::before {
+    display: inline-block;
+    margin-right: 5px;
+    content: '**';
+}

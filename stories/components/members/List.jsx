@@ -50,19 +50,24 @@ export default class MemberList extends Component {
     render() {
         return (
             <div>
-                <div>
-                    <h1>Members <span>/</span> <span>List</span></h1>
+                <div className={Styles['header-wrapper']}>
+                    <div className={Styles.header}>
+                        <h1 className={Styles.heading}>Members <span className={Styles.slash}>/</span> <span className={Styles.subheading}>List</span></h1>
+                        <TooltipButton icon='add' floating tooltip='Add' theme={TooltipButtonTheme}/>
+                    </div>
                 </div>
-                <TooltipButton icon='add' floating tooltip='Add new member' theme={TooltipButtonTheme}/>
-                <Searchbox />
-                <div style={{marginTop: '25px', marginBottom: '25px'}}>
+
+                <div className={Styles['searchbox-wrapper']}>
+                    <Searchbox />
+                </div>
+                <div className={Styles['table-wrapper']}>
                     <ListTable onDeleteClick={this.handleModalToggle}/>
                 </div>
-                <div>
+                <div className={Styles.footer}>
+                    <p className={Styles.totalentry}>There are total 1000 members</p>
                     <div>
-                        <p>There are total 1000 members</p>
+                        <Pagination />
                     </div>
-                    <Pagination />
                 </div>
                 <Dialog
                     actions={this.getModalActions()}

@@ -1,3 +1,16 @@
+/*
+    @author: Kamal Sharif
+
+    @createdAt: 17.3.2017
+    @lastModified: 20.3.2017
+    @modifiedBy: Kamal Sharif
+
+    @moduleName: members
+    @modulePath: ./src/modules/members
+    @fileName: Searchbox.css
+    @filePath: ./src/modules/members/components/css/Searchbox.css
+*/
+
 .searchbox {
     position: relative;
     width: 250px;
