@@ -21,7 +21,7 @@ export default class ListTable extends Component {
         return (
             <IconMenu icon='more_vert' position='topLeft' menuRipple>
                 <MenuItem caption='Edit' theme={MenuTheme}/>
-                <MenuItem caption='Delete' theme={MenuTheme}/>
+                <MenuItem caption='Delete' theme={MenuTheme} onClick={this.props.onDeleteClick}/>
             </IconMenu>
         );
     }
@@ -52,4 +52,8 @@ export default class ListTable extends Component {
             </Table>
         );
     }
+}
+
+ListTable.propTypes = {
+    onDeleteClick: React.PropTypes.func
 }

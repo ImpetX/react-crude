@@ -1,0 +1,48 @@
+/*
+    @author: Kamal Sharif
+
+    @createdAt: 20.3.2017
+    @lastModified: 20.3.2017
+    @modifiedBy: Kamal Sharif
+
+    @moduleName: members
+    @modulePath: ./src/modules/members
+    @fileName: Modal.css
+    @filePath: ./src/modules/members/components/css/Modal.css
+*/
+
+.wrapper {
+    z-index: 2001;
+}
+
+.body, .navigation {
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.body p {
+    font-size: 16px;
+    color: #333;
+}
+
+.button {
+    height: 44px;
+    padding: 0 20px;
+    color: #fff !important;
+}
+
+.button:first-child {
+    background-color: #df3333;
+}
+
+.wrapper .button:first-child:hover {
+    background-color: #df3333;
+}
+
+.button:nth-child(2) {
+    background-color: #9c27b0;
+}
+
+.wrapper .button:nth-child(2):hover {
+    background-color: #9c27b0;
+}

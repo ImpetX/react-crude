@@ -1,0 +1,26 @@
+/*
+    @author: Kamal Sharif
+
+    @createdAt: 20.3.2017
+    @lastModified: 20.3.2017
+    @modifiedBy: Kamal Sharif
+
+    @moduleName: members
+    @modulePath: ./src/modules/members
+    @fileName: TooltipButton.css
+    @filePath: ./src/modules/members/components/css/TooltipButton.css
+*/
+
+.neutral:not([disabled]).floating {
+    color: #fff;
+    background-color: #9c27b0;
+}
+
+.floating {
+    height: 48px;
+    width: 48px;
+}
+
+.floating .icon:not([data-react-toolbox='tooltip']) {
+    line-height: 48px;
+}
