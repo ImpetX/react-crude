@@ -9,10 +9,6 @@
     @filePath: ./src/stylesheet/utils/spacing.css
 */
 
-.mp25 {
-    margin-bottom: 25px;
-}
-
-.mp35 {
+.mb35 {
     margin-bottom: 35px;
 }

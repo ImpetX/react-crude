@@ -12,7 +12,7 @@
 */
 
 .header-wrapper, .searchbox-wrapper {
-    margin-bottom: 35px;
+    composes: mb35 from '../../../../stylesheet/utils/spacing.css';
 }
 
 .searchbox-wrapper, .footer{
