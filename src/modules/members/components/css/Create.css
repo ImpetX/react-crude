@@ -14,3 +14,7 @@
 .header-wrapper {
     composes: mb35 from '../../../../stylesheet/utils/spacing.css';
 }
+
+.required-notif {
+    color: #666;
+}

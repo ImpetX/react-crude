@@ -13,6 +13,8 @@ export default class MemberCreate extends Component {
                 <div className={Styles['header-wrapper']}>
                     <PageHeading moduleName='Members' componentName='Create'/>
                 </div>
+
+                <p className={Styles['required-notif']}>**All the fields are required.</p>
             </div>
         );
     }

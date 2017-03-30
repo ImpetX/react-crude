@@ -1,14 +1,12 @@
 /*
     @author: Kamal Sharif
 
-    @createdAt: 7.3.2017
-    @lastModified: 8.3.2017
+    @createdAt: 30.3.2017
+    @lastModified: 30.3.2017
     @modifiedBy: Kamal Sharif
 
-    @moduleName: authentication
-    @modulePath: ./src/modules/authentication
     @fileName: Input.css
-    @filePath: ./src/modules/authentication/components/css/Theme/Input.css
+    @filePath: ./src/stylesheet/common/Theme/Input.css
 */
 
 .bar::before, .bar::after {
