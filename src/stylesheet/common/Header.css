@@ -1,0 +1,35 @@
+/*
+    @author: Kamal Sharif
+
+    @createdAt: 30.3.2017
+    @lastModified: 30.3.2017
+    @modifiedBy: Kamal Sharif
+
+    @fileName: Header.css
+    @filePath: ./src/stylesheet/common/Header.css
+*/
+
+.header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.heading {
+    flex: 1;
+}
+
+.heading {
+    font-size: 30px;
+    color: #666;
+}
+
+.slash {
+    color: #b3b3b3;
+}
+
+.subheading {
+    font-size: 24px;
+    color: #9c27b0;
+    opacity: 0.8;
+}

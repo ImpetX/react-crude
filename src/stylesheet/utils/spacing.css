@@ -1,0 +1,18 @@
+/*
+    @author: Kamal Sharif
+
+    @createdAt: 30.3.2017
+    @lastModified: 30.3.2017
+    @modifiedBy: Kamal Sharif
+
+    @fileName: spacing.css
+    @filePath: ./src/stylesheet/utils/spacing.css
+*/
+
+.mp25 {
+    margin-bottom: 25px;
+}
+
+.mp35 {
+    margin-bottom: 35px;
+}

@@ -1,1 +1,12 @@
+/*
+    @author: Kamal Sharif
+
+    @createdAt: 30.3.2017
+    @lastModified: 30.3.2017
+    @modifiedBy: Kamal Sharif
+
+    @fileName: vendor.css
+    @filePath: ./src/stylesheet/vendor/spacing.css
+*/
+
 @import '../../../node_modules/normalize.css/normalize.css';

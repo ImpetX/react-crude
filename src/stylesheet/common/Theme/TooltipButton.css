@@ -1,14 +1,12 @@
 /*
     @author: Kamal Sharif
 
-    @createdAt: 20.3.2017
-    @lastModified: 20.3.2017
+    @createdAt: 30.3.2017
+    @lastModified: 30.3.2017
     @modifiedBy: Kamal Sharif
 
-    @moduleName: members
-    @modulePath: ./src/modules/members
     @fileName: TooltipButton.css
-    @filePath: ./src/modules/members/components/css/Theme/TooltipButton.css
+    @filePath: ./src/stylesheet/common/Theme/TooltipButton.css
 */
 
 .neutral:not([disabled]).floating {
