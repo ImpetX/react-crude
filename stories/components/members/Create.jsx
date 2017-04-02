@@ -11,6 +11,7 @@ import '../../../node_modules/normalize.css/normalize.css';
 import '../../../src/stylesheet/base/base.css';
 import Styles from '../../../src/modules/members/components/css/Create.css';
 import InputTheme from '../../../src/stylesheet/common/Theme/Input.css';
+import DatepickerTheme from '../../../src/stylesheet/common/Theme/Datepicker.css';
 
 export default class MemberCreate extends Component {
     constructor(props) {
@@ -153,7 +154,6 @@ export default class MemberCreate extends Component {
     }
 
     handleFileUpload(e) {
-        console.log('uploaded file', e.target.files);
         return e.target.files[0];
     }
 
@@ -168,28 +168,30 @@ export default class MemberCreate extends Component {
 
                 <div>
                     <form>
-                        <div>
-                            <div>
+                        <div className={Styles.inputs}>
+                            <div className={Styles.names}>
                                 <Input
                                     type='text'
                                     label='Name [Bengali]'
                                     theme={InputTheme}
-                                    value={this.state.nameBengali}
+                                    value={this.state.namesBengali}
                                     onChange={this.handleNameBengaliChange}
                                 />
                             </div>
 
-                            <div>
+                            <div className={Styles.names}>
                                 <Input
                                     type='text'
                                     label='Name [English]'
                                     theme={InputTheme}
-                                    value={this.state.nameEnglish}
+                                    value={this.state.namesEnglish}
                                     onChange={this.handleNameEnglishChange}
                                 />
                             </div>
+                        </div>
 
-                            <div>
+                        <div className={Styles.inputs}>
+                            <div className={Styles.names}>
                                 <Input
                                     type='text'
                                     label="Father's name"
@@ -199,7 +201,7 @@ export default class MemberCreate extends Component {
                                 />
                             </div>
 
-                            <div>
+                            <div className={Styles.names}>
                                 <Input
                                     type='text'
                                     label="Mother's name"
@@ -207,8 +209,10 @@ export default class MemberCreate extends Component {
                                     value={this.state.motherName}
                                     onChange={this.handleMotherNameChange}/>
                             </div>
+                        </div>
 
-                            <div>
+                        <div className={Styles.inputs}>
+                            <div className={Styles.address}>
                                 <Input
                                     type='text'
                                     label='Present address'
@@ -220,7 +224,7 @@ export default class MemberCreate extends Component {
                                     />
                             </div>
 
-                            <div>
+                            <div className={Styles.address}>
                                 <Input
                                     type='text'
                                     label='Permanent address'
@@ -231,8 +235,10 @@ export default class MemberCreate extends Component {
                                     rows={1}
                                 />
                             </div>
+                        </div>
 
-                            <div>
+                        <div className={Styles.inputs}>
+                            <div className={Styles.onethird}>
                                 <Input
                                     type='text'
                                     label='Occupation'
@@ -241,7 +247,7 @@ export default class MemberCreate extends Component {
                                     onChange={this.handleOccupationChange}
                                 />
                             </div>
-                            <div>
+                            <div className={Styles.onethird}>
                                 <Input
                                     type='text'
                                     label='Mobile number'
@@ -251,7 +257,16 @@ export default class MemberCreate extends Component {
                                 />
                             </div>
 
-                            <div>
+                            <div className={Styles.onethird}>
+                                <DatePicker
+                                    label='Birthdate'
+                                    onChange={this.handleDateOfBirthChange}
+                                    value={this.state.dateOfBirth}
+                                    theme={DatepickerTheme}
+                                />
+                            </div>
+
+                            <div className={Styles.onethird}>
                                 <Dropdown
                                     auto={false}
                                     label='Marital status'
@@ -261,7 +276,7 @@ export default class MemberCreate extends Component {
                                 />
                             </div>
 
-                            <div>
+                            <div className={Styles.onethird}>
                                 <Input
                                     type='text'
                                     label='Nationality'
@@ -271,7 +286,7 @@ export default class MemberCreate extends Component {
                                 />
                             </div>
 
-                            <div>
+                            <div className={Styles.onethird}>
                                 <Input
                                     type='text'
                                     label='Religion'
@@ -281,17 +296,19 @@ export default class MemberCreate extends Component {
                                 />
                             </div>
 
-                            <div>
+                            <div className={Styles.onethird}>
                                 <Dropdown
-                                    auto
+                                    auto={false}
                                     label='Blood group'
                                     value={this.state.bloodGroup}
                                     onChange={this.handleBloodGroupChange}
                                     source={this.getBloodGroupSource()}
                                 />
                             </div>
+                        </div>
 
-                            <div>
+                        <div className={Styles.inputs}>
+                            <div className={Styles.names}>
                                 <Input
                                     type='text'
                                     label='Referrer name'
@@ -301,7 +318,7 @@ export default class MemberCreate extends Component {
                                 />
                             </div>
 
-                            <div>
+                            <div className={Styles.names}>
                                 <Input
                                     type='text'
                                     label='Referrer contact'
@@ -310,16 +327,10 @@ export default class MemberCreate extends Component {
                                     onChange={this.handleReferrerContactChange}
                                 />
                             </div>
+                        </div>
 
-                            <div>
-                                <DatePicker
-                                    label='Birthdate'
-                                    onChange={this.handleDateOfBirthChange}
-                                    value={this.state.dateOfBirth}
-                                />
-                            </div>
-
-                            <div>
+                        <div className={Styles.inputs}>
+                            <div className={Styles.onethird}>
                                 <Dropdown
                                     auto
                                     label='Certificate type'
@@ -329,7 +340,7 @@ export default class MemberCreate extends Component {
                                 />
                             </div>
 
-                            <div>
+                            <div className={Styles.onethird}>
                                 <Input
                                     type='text'
                                     label='Certificate number'
@@ -339,15 +350,21 @@ export default class MemberCreate extends Component {
                                 />
                             </div>
 
-                            <div>
+                            <div className={Styles.onethird}>
                                 <DatePicker
                                     label='Membership date'
                                     onChange={this.handleMembershipDateChange}
                                     value={this.state.membershipDate}
                                 />
                             </div>
+                        </div>
 
-                            <div>
+                        <div className={Styles.inputs}>
+                            <div className={Styles.filepreview}>
+                                <img src='' alt='' className={Styles.profileimg}/>
+                            </div>
+
+                            <div className={Styles.fileupload}>
                                 <BrowseButton
                                   icon="file_upload"
                                   label="Upload image"
@@ -356,25 +373,28 @@ export default class MemberCreate extends Component {
                                   primary
                                 />
                             </div>
-                            <div>
-                                <img src='' alt='' />
-                            </div>
+                        </div>
 
-                            <div>
+                        <div className={Styles.inputs}>
+                            <div className={Styles.actionbtn}>
                                 <Button
                                   icon="save"
                                   label="Save"
                                   raised
                                   primary
                                 />
+                            </div>
 
+                            <div className={Styles.actionbtn}>
                                 <Button
-                                  icon="edit"
-                                  label="Edit"
+                                  icon="cancel"
+                                  label="Cancel"
                                   raised
                                   primary
                                 />
+                            </div>
 
+                            <div className={Styles.actionbtn}>
                                 <Button
                                   icon="keyboard_backspace"
                                   label="Back"

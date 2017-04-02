@@ -2,7 +2,7 @@
     @author: Kamal Sharif
 
     @createdAt: 14.3.2017
-    @lastModified: 15.3.2017
+    @lastModified: 2.4.2017
     @modifiedBy: Kamal Sharif
 
     @moduleName: Core
@@ -12,11 +12,17 @@
 */
 
 .navigbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 149;
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-end;
-    padding: 15px 15px 9px;
+    padding: 15px 0 9px;
+    background-color: #fff;
     border-bottom: 1px solid #e6e6e6;
 }
 

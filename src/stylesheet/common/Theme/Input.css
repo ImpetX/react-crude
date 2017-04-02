@@ -13,6 +13,10 @@
     background-color: #9c27b0;
 }
 
+textarea.inputElement {
+    resize: none;
+}
+
 .inputElement:focus:not([disabled]):not([readonly]) ~ .label:not(.fixed) {
     font-size: 14px;
     color: #9c27b0;

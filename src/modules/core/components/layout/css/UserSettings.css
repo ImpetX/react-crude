@@ -2,7 +2,7 @@
     @author: Kamal Sharif
 
     @createdAt: 14.3.2017
-    @lastModified: 15.3.2017
+    @lastModified: 2.4.2017
     @modifiedBy: Kamal Sharif
 
     @moduleName: Core
@@ -38,7 +38,7 @@
 .dropdown {
     position: absolute;
     top: 100%;
-    left: -15px;
+    left: -35px;
     z-index: 150;
     min-width: 100px;
     margin-top: 15px;

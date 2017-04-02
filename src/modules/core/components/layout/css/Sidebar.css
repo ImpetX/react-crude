@@ -2,7 +2,7 @@
     @author: Kamal Sharif
 
     @createdAt: 14.3.2017
-    @lastModified: 1.4.2017
+    @lastModified: 2.4.2017
     @modifiedBy: Kamal Sharif
 
     @moduleName: Core
@@ -15,7 +15,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 2000;
+    z-index: 150;
 
     height: 100vh;
     width: 150px;
