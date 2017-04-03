@@ -22,11 +22,10 @@ export default class MemberList extends Component {
     }
 
     handleModalToggle() {
-        this.setState(
-            {
-                modalShow: !this.state.modalShow
-            }
-        )
+        this.setState(prevState => ({
+            modalShow: !prevState.modalShow
+        }));
+        console.log('this.state.modalShow', this.state.modalShow);
     }
 
     getModalActions() {

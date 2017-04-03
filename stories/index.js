@@ -5,6 +5,7 @@ import Login from './components/Login';
 import Layout from './components/layout/Layout';
 import MemberList from './components/members/List';
 import MemberCreate from './components/members/Create';
+import MemberModify from './components/members/Modify';
 
 storiesOf('Login Component', module)
   .add('Login', () => (
@@ -25,5 +26,11 @@ storiesOf('Layout Component', module)
   .add('Member Create', () => (
       <Layout>
           <MemberCreate />
+      </Layout>
+  ))
+
+  .add('Member Modify', () => (
+      <Layout>
+          <MemberModify />
       </Layout>
   ));
