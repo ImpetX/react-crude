@@ -2,9 +2,21 @@
     @author: Kamal Sharif
 
     @createdAt: 2.4.2017
-    @lastModified: 2.4.2017
+    @lastModified: 3.4.2017
     @modifiedBy: Kamal Sharif
 
     @fileName: Datepicker.css
     @filePath: ./src/stylesheet/common/Theme/Datepicker.css
 */
+
+.header, .day.active > span  {
+    background-color: #9c27b0;
+}
+
+.dialog > [role='navigation'] > .button:first-child {
+    color: #df3333;
+}
+
+.dialog > [role='navigation'] > .button:last-child, .years > li.active {
+    color: #9c27b0;
+}

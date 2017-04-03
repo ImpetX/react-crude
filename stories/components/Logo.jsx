@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 import Styles from '../../src/modules/authentication/components/css/Logo.css';
 

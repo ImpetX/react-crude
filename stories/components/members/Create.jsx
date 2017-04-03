@@ -355,6 +355,7 @@ export default class MemberCreate extends Component {
                                     label='Membership date'
                                     onChange={this.handleMembershipDateChange}
                                     value={this.state.membershipDate}
+                                    theme={DatepickerTheme}
                                 />
                             </div>
                         </div>
