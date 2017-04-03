@@ -1,0 +1,22 @@
+/*
+    @author: Kamal Sharif
+
+    @createdAt: 3.4.2017
+    @lastModified: 3.4.2017
+    @modifiedBy: Kamal Sharif
+
+    @fileName: Save.css
+    @filePath: ./src/stylesheet/common/Theme/Button/Save.css
+*/
+
+.button {
+    composes: button from './Common.css';
+}
+
+.button:not([disabled]).raised, .button[disabled] {
+    color: #fff;
+}
+
+.button:not([disabled]).raised {
+    background-color: #ff7a50;
+}

@@ -12,6 +12,10 @@ import '../../../src/stylesheet/base/base.css';
 import Styles from '../../../src/modules/members/components/css/Create.css';
 import InputTheme from '../../../src/stylesheet/common/Theme/Input.css';
 import DatepickerTheme from '../../../src/stylesheet/common/Theme/Datepicker.css';
+import UploadButtonTheme from '../../../src/stylesheet/common/Theme/Button/Upload.css';
+import SaveButtonTheme from '../../../src/stylesheet/common/Theme/Button/Save.css';
+import CancelButtonTheme from '../../../src/stylesheet/common/Theme/Button/Cancel.css';
+import BackButtonTheme from '../../../src/stylesheet/common/Theme/Button/Back.css';
 
 export default class MemberCreate extends Component {
     constructor(props) {
@@ -371,7 +375,7 @@ export default class MemberCreate extends Component {
                                   label="Upload image"
                                   onChange={this.handleFileUpload}
                                   raised
-                                  primary
+                                  theme={UploadButtonTheme}
                                 />
                             </div>
                         </div>
@@ -382,7 +386,7 @@ export default class MemberCreate extends Component {
                                   icon="save"
                                   label="Save"
                                   raised
-                                  primary
+                                  theme={SaveButtonTheme}
                                 />
                             </div>
 
@@ -391,7 +395,7 @@ export default class MemberCreate extends Component {
                                   icon="cancel"
                                   label="Cancel"
                                   raised
-                                  primary
+                                  theme={CancelButtonTheme}
                                 />
                             </div>
 
@@ -400,7 +404,7 @@ export default class MemberCreate extends Component {
                                   icon="keyboard_backspace"
                                   label="Back"
                                   raised
-                                  primary
+                                  theme={BackButtonTheme}
                                 />
                             </div>
                         </div>
