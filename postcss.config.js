@@ -1,5 +1,6 @@
 var autoprefixer = require('autoprefixer');
 var cssnext = require('postcss-cssnext');
+var postcssSimpleVars = require('postcss-simple-vars');
 
 module.exports = {
     plugins: [
@@ -9,6 +10,7 @@ module.exports = {
             }
         ),
 
-        cssnext()
+        cssnext(),
+        postcssSimpleVars()
     ]
 }

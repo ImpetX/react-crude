@@ -9,14 +9,17 @@
     @filePath: ./src/stylesheet/common/Theme/Button/Back.css
 */
 
+$color: #fff;
+$background-color: #397ba2;
+
 .button {
     composes: button from './Common.css';
 }
 
 .button:not([disabled]).raised, .button[disabled] {
-    color: #fff;
+    color: $color;
 }
 
 .button:not([disabled]).raised {
-    background-color: #397ba2;
+    background-color: $background-color;
 }

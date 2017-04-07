@@ -27,7 +27,8 @@ module.exports = {
 
   postcss: function() {
     return [
-      require('postcss-cssnext')
+      require('postcss-cssnext'),
+      require('postcss-simple-vars')
     ];
   }
 };

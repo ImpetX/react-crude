@@ -9,6 +9,10 @@
     @filePath: ./src/stylesheet/common/Header.css
 */
 
+$color-heading: #666;
+$color-subheading: #9c27b0;
+$color-slash: #b3b3b3;
+
 .header{
     display: flex;
     flex-direction: row;
@@ -21,15 +25,15 @@
 
 .heading {
     font-size: 30px;
-    color: #666;
+    color: $color-heading;
 }
 
 .slash {
-    color: #b3b3b3;
+    color: $color-slash;
 }
 
 .subheading {
     font-size: 24px;
-    color: #9c27b0;
+    color: $color-subheading;
     opacity: 0.8;
 }

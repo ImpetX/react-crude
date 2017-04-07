@@ -1,0 +1,6 @@
+{
+    "rules": {
+        "length-zero-no-unit": true,
+        "block-no-empty": true
+    }
+}
