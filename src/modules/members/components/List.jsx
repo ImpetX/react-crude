@@ -1,15 +1,14 @@
 import React, {Component} from 'react';
 import Dialog from 'react-toolbox/lib/dialog';
 
-import Searchbox from '../ui/Searchbox';
-import ListTable from '../ui/Table';
-import Pagination from '../ui/pagination/Pagination';
-import PageHeader from '../ui/pageheader/PageHeader';
+import Searchbox from '../../../lib/Searchbox';
+import ListTable from '../../../lib/Table';
+import Pagination from '../../../lib/pagination/Pagination';
+import PageHeader from '../../../lib/pageheader/PageHeader';
 
-import '../../../node_modules/normalize.css/normalize.css';
-import '../../../src/stylesheet/base/base.css';
-import Styles from '../../../src/modules/members/components/css/List.css';
-import ModalTheme from '../../../src/stylesheet/common/Theme/Modal/Delete.css';
+
+import Styles from './css/List.css';
+import ModalTheme from '../../../stylesheet/common/Theme/Modal/Delete.css';
 
 export default class MemberList extends Component {
     constructor(props) {

@@ -4,8 +4,8 @@ import {IconMenu, MenuItem, MenuDivider} from 'react-toolbox/lib/menu';
 
 import {data} from './Tablemodel';
 
-import TableTheme from '../../../src/stylesheet/common/Theme/Table.css';
-import MenuTheme from '../../../src/stylesheet/common/Theme/Menu.css';
+import TableTheme from '../stylesheet/common/Theme/Table.css';
+import MenuTheme from '../stylesheet/common/Theme/Menu.css';
 
 export default class ListTable extends Component {
     generateTableHeader() {

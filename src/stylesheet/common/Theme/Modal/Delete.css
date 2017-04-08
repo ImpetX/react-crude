@@ -1,0 +1,46 @@
+/*
+    @author: Kamal Sharif
+
+    @createdAt: 8.4.2017
+    @lastModified: 8.4.2017
+    @modifiedBy: Kamal Sharif
+
+    @fileName: Delete.css
+    @filePath: ./src/stylesheet/common/Theme/Modal/Delete.css
+*/
+
+.wrapper {
+    z-index: 2001;
+}
+
+.body, .navigation {
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.body p {
+    font-size: 16px;
+    color: #333;
+}
+
+.button {
+    height: 44px;
+    padding: 0 20px;
+    color: #fff !important;
+}
+
+.button:first-child {
+    background-color: #df3333;
+}
+
+.wrapper .button:first-child:hover {
+    background-color: #df3333;
+}
+
+.button:nth-child(2) {
+    background-color: #9c27b0;
+}
+
+.wrapper .button:nth-child(2):hover {
+    background-color: #9c27b0;
+}

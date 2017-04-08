@@ -1,0 +1,18 @@
+/*
+    @author: Kamal Sharif
+
+    @createdAt: 8.4.2017
+    @lastModified: 8.4.2017
+    @modifiedBy: Kamal Sharif
+
+    @fileName: Table.css
+    @filePath: ./src/stylesheet/common/Theme/Table.css
+*/
+
+.table {
+    font-size: 14px;
+}
+
+.headCell {
+    font-size: 14px;
+}
