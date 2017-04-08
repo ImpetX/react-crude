@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import Styles from '../../../src/modules/members/components/css/Searchbox.css';
+import Styles from '../../../src/stylesheet/common/Searchbox.css';
 
 export default class Searchbox extends Component {
     render() {

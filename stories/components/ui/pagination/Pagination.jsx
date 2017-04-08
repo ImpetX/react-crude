@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import LeftArrow from './LeftArrow';
 import RightArrow from './RightArrow';
 
-import Styles from '../../../../src/modules/members/components/css/Pagination.css';
+import Styles from '../../../../src/stylesheet/common/Pagination.css';
 
 export default class Pagination extends Component {
     render() {
