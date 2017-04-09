@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import Input from 'react-toolbox/lib/input';
 import {Button} from 'react-toolbox/lib/button';
 

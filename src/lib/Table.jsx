@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import {Table, TableHead, TableRow, TableCell} from 'react-toolbox/lib/table';
 import {IconMenu, MenuItem, MenuDivider} from 'react-toolbox/lib/menu';
 

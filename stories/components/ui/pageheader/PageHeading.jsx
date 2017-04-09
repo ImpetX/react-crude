@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Styles from '../../../../src/stylesheet/common/Header.css';
 
