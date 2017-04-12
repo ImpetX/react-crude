@@ -111,7 +111,7 @@ var config = {
         }),
 
         new ExtractTextPlugin({
-            filename: 'styles.css',
+            filename: '[name].css',
             allChunks: true
         })
     ]
