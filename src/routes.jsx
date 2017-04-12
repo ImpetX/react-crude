@@ -1,15 +1,14 @@
-import React from 'react';
-import {BrowserRouter, Route, Link} from 'react-router-dom';
+import React, {Component} from 'react';
+import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 
 import Login from './modules/authentication/components/Login';
 
-const Routes = () => (
-    <BrowserRouter>
-        <div>
-            <Link to='/login'>Login</Link>
-            <Route path='/login' component={Login} />
-        </div>
-    </BrowserRouter>
-);
-
-export default Routes;
+export default class Routes extends Component {
+    render() {
+        return (
+            <Router history={browserHistory}>
+                <Route path='/' component={Login} />
+            </Router>
+        );
+    }
+}

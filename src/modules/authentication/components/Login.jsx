@@ -5,9 +5,9 @@ import {Button} from 'react-toolbox/lib/button';
 
 import Logo from './Logo';
 
-import Styles from './css/Login.css';
-import InputTheme from '../../../stylesheet/common/Theme/Input.css';
-import ButtonTheme from './css/Theme/Button.css';
+import Styles from './css/Login';
+import InputTheme from '../../../stylesheet/common/Theme/Input';
+import ButtonTheme from './css/Theme/Button';
 
 
 export default class Login extends Component {
