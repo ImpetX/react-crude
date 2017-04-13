@@ -6,7 +6,7 @@ import {Button} from 'react-toolbox/lib/button';
 import Logo from './Logo';
 
 import Styles from './css/Login';
-import InputTheme from '../../../stylesheet/common/Theme/Input';
+import InputTheme from 'styles/common/Theme/Input';
 import ButtonTheme from './css/Theme/Button';
 
 
