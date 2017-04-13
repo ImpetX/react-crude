@@ -31,7 +31,7 @@ export default class Login extends Component {
     render() {
         return (
             <div className={Styles.wrapper}>
-                <Logo href='#' src='./assets/images/logo/logo.svg' />
+                <Logo href='#' src='./src/assets/images/logo/logo.svg' />
                 <form onSubmit={this.props.handleSubmit}>
                     <div className={Styles.inputs}>
                         <Input type='email' label='Email' theme={InputTheme} value={this.state.email} onChange={this.handleEmailChange}/>
