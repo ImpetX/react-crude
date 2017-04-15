@@ -58,6 +58,7 @@
     "webpack-bundle-analyzer": "^2.3.0"
   },
   "dependencies": {
+    "firebase": "^3.7.8",
     "normalize.css": "^5.0.0",
     "react": "^15.5.3",
     "react-addons-css-transition-group": "^15.5.2",
