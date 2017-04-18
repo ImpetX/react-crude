@@ -7,4 +7,13 @@ const config = {
     messagingSenderId: "868643763364"
 };
 
-export default config;
+// Creates and initializes a Firebase app instance.
+firebase.initializeApp(config);
+
+const database = firebase.database(); //Gets the Database service for the default app or a given app.
+const ref = firebase.database().ref(); // refrence to the root location of the database.
+
+export {
+    database,
+    ref
+};
