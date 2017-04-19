@@ -31,7 +31,8 @@ var config = {
             modules: path.resolve(__dirname, 'src/modules'),
             styles: path.resolve(__dirname, 'src/stylesheet'),
             images: path.resolve(__dirname, 'src/assets/images'),
-            fonts: path.resolve(__dirname, 'src/assets/fonts')
+            fonts: path.resolve(__dirname, 'src/assets/fonts'),
+            firebase: path.resolve(__dirname, 'src/firebase')
         }
     },
 

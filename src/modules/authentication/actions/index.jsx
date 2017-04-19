@@ -1,3 +1,4 @@
+import {firebaseAuth} from 'firebase/config';
 import ActionTypes from './types';
 
 function isLoginAttempt() {
