@@ -7,19 +7,21 @@ function isLoginAttempt() {
     };
 }
 
-function isLoginSuccess(email, password) {
+function isLoginSuccess(email, password, payload) {
     return {
         type: ActionTypes.LOGGED_IN,
         email,
-        password
+        password,
+        payload
     };
 }
 
-function isLoginFailed(email, password) {
+function isLoginFailed(email, password, payload) {
     return {
         type: ActionTypes.LOGGED_IN_ERROR,
         email,
-        password
+        password,
+        payload
     };
 }
 
@@ -32,5 +34,18 @@ function isLogOut() {
 function attemptToLogin(email, password) {
     return function(dispatch) {
         dispatch(isLoginAttempt());
+
+        firebaseAuth.signInWithEmailAndPassword(email, password)
+            .then(function(userInfo) {
+                dispatch(isLoginSuccess(email, password, userInfo));
+            })
+
+            .catch(function(error) {
+                dispatch(isLoginFailed(email, password, errorCode, error));
+            });
     }
 }
+
+export {
+    attemptToLogin
+};
