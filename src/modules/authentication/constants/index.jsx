@@ -2,7 +2,8 @@ const ActionTypes = {
     ATTEMPTING_LOGIN: 'ATTEMPTING_LOGIN',
     LOGGED_IN: 'LOGGED_IN',
     LOGGED_IN_ERROR: 'LOGGED_IN_ERROR',
-    LOGOUT: 'LOGOUT'
+    LOGOUT_SUCCESS: 'LOGOUT_SUCCESS',
+    LOGOUT_ERROR: 'LOGOUT_ERROR'
 };
 
 export default ActionTypes;

@@ -1,5 +1,5 @@
 import {firebaseAuth} from 'firebase/config';
-import ActionTypes from './types';
+import ActionTypes from '../constants';
 
 function isLoginAttempt() {
     return {
@@ -25,9 +25,16 @@ function isLoginFailed(email, password, payload) {
     };
 }
 
-function isLogOut() {
+function isLogOutSuccess() {
     return {
-        type: ActionTypes.LOGOUT
+        type: ActionTypes.LOGOUT_SUCCESS
+    };
+}
+
+function isLogOutFailed(payload) {
+    return {
+        type: ActionTypes.LOGOUT_ERROR,
+        payload
     };
 }
 
@@ -42,6 +49,15 @@ function attemptToLogin(email, password) {
 
             .catch(function(error) {
                 dispatch(isLoginFailed(email, password, errorCode, error));
+            });
+
+        firebaseAuth.signOut()
+            .then(function() {
+                dispatch(isLogOutSuccess());
+            })
+
+            .catch(function(error) {
+                dispatch(isLogOutFailed(error));
             });
     }
 }
