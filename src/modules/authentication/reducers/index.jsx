@@ -1,7 +1,5 @@
 import ActionTypes from '../constants';
 
-const defaultState = {};
-
 const isLoggedInTrue = {
     isLoggedIn: true
 };
@@ -25,6 +23,8 @@ const authFailedState = {
     email: null,
     displayName: null
 }
+
+const defaultState = isLoggedInFalse;
 
 const AuthReducer = (state = defaultState, action) => {
     switch(action.type) {
