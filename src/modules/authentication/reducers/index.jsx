@@ -1,15 +1,15 @@
 import ActionTypes from '../constants';
 
 const isLoggedInTrue = {
-    isLoggedIn: true
+    authenticated: true
 };
 
 const isLoggedInFalse = {
-    isLoggedIn: false
+    authenticated: false
 };
 
 const isAuthInProcess = {
-    isLoggedIn: 'pending'
+    authenticated: 'pending'
 }
 
 const authSuccessState = {

@@ -3,10 +3,8 @@ import {Router, Route, browserHistory} from 'react-router';
 
 import 'styles/main';
 import Login from 'modules/authentication/components/Login';
-import Layout from 'modules/core/components/layout/Layout';
-import NotFound from 'modules/core/components/layout/NotFound';
 
-const Public = () => {
+const Routes = () => {
     return (
         <Router history={browserHistory}>
             <Route path='/' component={Login} />
@@ -15,16 +13,4 @@ const Public = () => {
     );
 };
 
-const Private = () => {
-    return (
-        <Router history={browserHistory}>
-            <Route path="/home" component={Layout} />
-            <Route path="*" component={NotFound}/>
-        </Router>
-    );
-};
-
-export {
-	Public,
-	Private
-};
+export default Routes;
