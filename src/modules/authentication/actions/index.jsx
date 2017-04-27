@@ -38,19 +38,30 @@ function isLogOutFailed(payload) {
     };
 }
 
+function isVerifiedUser() {
+    return {
+        type: ActionTypes.VERIFY_AUTH_USER
+    }
+}
+
 function attemptToLogin(email, password) {
     return function(dispatch) {
         dispatch(isLoginAttempt());
 
         firebaseAuth.signInWithEmailAndPassword(email, password)
-            .then(function(userInfo) {
-                dispatch(isLoginSuccess(email, password, userInfo));
-            })
+        .then(function(userInfo) {
+            dispatch(isLoginSuccess(email, password, userInfo));
+        })
 
-            .catch(function(error) {
-                dispatch(isLoginFailed(email, password, errorCode, error));
-            });
+        .catch(function(error) {
+            dispatch(isLoginFailed(email, password, errorCode, error));
+        });
 
+    }
+}
+
+function attemptToLogout() {
+    return function(dispatch) {
         firebaseAuth.signOut()
             .then(function() {
                 dispatch(isLogOutSuccess());
@@ -62,6 +73,23 @@ function attemptToLogin(email, password) {
     }
 }
 
+function verifyAuth() {
+    return function(dispatch) {
+        firebaseAuth.onAuthStateChanged(
+            function(user) {
+                if(user) {
+                    dispatch(isVerifiedUser());
+                }
+
+                else {
+                    dispatch(attemptToLogout());
+                }
+            }
+        )
+    }
+}
+
 export {
-    attemptToLogin
+    attemptToLogin,
+    attemptToLogout
 };

@@ -43,6 +43,9 @@ const AuthReducer = (state = defaultState, action) => {
         case ActionTypes.LOGOUT_ERROR:
             return Object.assign({}, state, isLoggedInFalse, authFailedState);
 
+        case ActionTypes.VERIFY_AUTH_USER:
+            return Object.assign({}, state, isLoggedInTrue);
+
         default:
             return state;
     }
