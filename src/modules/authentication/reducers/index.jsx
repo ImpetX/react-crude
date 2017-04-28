@@ -10,19 +10,13 @@ const isLoggedInFalse = {
 
 const isAuthInProcess = {
     authenticated: 'pending'
-}
-
-const authSuccessState = {
-    uid: action.payload.uid,
-    email: action.payload.email,
-    displayName: 'Admin'
 };
 
 const authFailedState = {
     uid: null,
     email: null,
     displayName: null
-}
+};
 
 const defaultState = isLoggedInFalse;
 
@@ -32,7 +26,11 @@ const AuthReducer = (state = defaultState, action) => {
             return Object.assign({}, state, isAuthInProcess);
 
         case ActionTypes.LOGGED_IN:
-            return Object.assign({}, state, isLoggedInTrue, authSuccessState);
+            return Object.assign({}, state, isLoggedInTrue, {
+                uid: action.payload.uid,
+                email: action.payload.email,
+                displayName: 'Admin'
+            });
 
         case ActionTypes.LOGGED_IN_ERROR:
             return Object.assign({}, state, isLoggedInFalse, authFailedState);

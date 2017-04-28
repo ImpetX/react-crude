@@ -1,3 +1,5 @@
+import * as firebase from 'firebase';
+
 const config = {
     apiKey: "AIzaSyAjIy62ACyUq20km8GDISjKMdLdmOe3UrM",
     authDomain: "react-crud-e3c14.firebaseapp.com",

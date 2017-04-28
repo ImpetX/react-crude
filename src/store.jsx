@@ -2,7 +2,7 @@ import {createStore, applyMiddleware} from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
 import rootReducer from './reducer';
-import * as Actions from 'modules/authectication/actions';
+import * as Actions from 'modules/authentication/actions';
 
 const loggerMiddleware = createLogger();
 

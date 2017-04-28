@@ -32,7 +32,7 @@ var config = {
             styles: path.resolve(__dirname, 'src/stylesheet'),
             images: path.resolve(__dirname, 'src/assets/images'),
             fonts: path.resolve(__dirname, 'src/assets/fonts'),
-            firebase: path.resolve(__dirname, 'src/firebase')
+            Firebase: path.resolve(__dirname, 'src/firebase')
         }
     },
 

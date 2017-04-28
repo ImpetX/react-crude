@@ -1,4 +1,4 @@
-import {firebaseAuth} from 'firebase/config';
+import {firebaseAuth} from 'Firebase/config';
 import ActionTypes from '../constants';
 
 function isLoginAttempt() {
