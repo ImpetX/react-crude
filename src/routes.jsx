@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import {Router, Route, browserHistory} from 'react-router';
 
 import 'styles/main';
+import AuthRoute from 'modules/authentication/routes';
 import RequireAuth from 'modules/authentication/containers/RequireAuth';
-import Login from 'modules/authentication/components/Login';
 import Layout from 'modules/core/components/layout/Layout';
 
 const Routes = () => {
