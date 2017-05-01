@@ -10,7 +10,7 @@ const AuthLayout = (props) => {
 }
 
 AuthLayout.propTypes = {
-    children: React.PropTypes.element
+    children: PropTypes.element
 };
 
 export default AuthLayout;

@@ -36,9 +36,9 @@ LoginContainerClass.propTypes = {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getValuesOnSubmit: (getEmailValue, getPasswordValue) => {
-            console.log('email, password', getEmailValue, getPasswordValue);
-            dispatch(attemptToLogin(getEmailValue, getPasswordValue));
+        getValuesOnSubmit: (email, password) => {
+            console.log('email, password', email, password);
+            dispatch(attemptToLogin(email, password));
         }
     };
 };
