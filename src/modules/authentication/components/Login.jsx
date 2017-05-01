@@ -28,16 +28,44 @@ export default class Login extends Component {
             }
         );
     }
+
+    getInputValues() {
+        let valuesObj = {
+            email: this.state.email,
+            password: this.state.password
+        };
+
+        return valuesObj;
+    }
+
     render() {
         return (
             <div className={Styles.wrapper}>
                 <Logo href='#' src='./src/assets/images/logo/logo.svg' />
                 <form onSubmit={this.props.handleSubmit}>
                     <div className={Styles.inputs}>
-                        <Input type='email' label='Email' theme={InputTheme} value={this.state.email} onChange={this.handleEmailChange}/>
-                        <Input type='password' label='Password' theme={InputTheme} value={this.state.password} onChange={this.handlePasswordChange} />
+                        <Input
+                            type='email'
+                            label='Email'
+                            theme={InputTheme}
+                            value={this.state.email}
+                            onChange={this.handleEmailChange}
+                        />
+
+                        <Input
+                            type='password'
+                            label='Password'
+                            theme={InputTheme}
+                            value={this.state.password}
+                            onChange={this.handlePasswordChange}
+                        />
                     </div>
-                    <Button type='submit' label='Log in' raised theme={ButtonTheme}/>
+
+                    <Button
+                        type='submit'
+                        label='Log in'
+                        raised theme={ButtonTheme}
+                    />
                 </form>
 
             </div>

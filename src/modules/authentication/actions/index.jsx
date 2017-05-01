@@ -54,7 +54,7 @@ function attemptToLogin(email, password) {
         })
 
         .catch(function(error) {
-            dispatch(isLoginFailed(email, password, errorCode, error));
+            dispatch(isLoginFailed(email, password, error));
         });
 
     }
