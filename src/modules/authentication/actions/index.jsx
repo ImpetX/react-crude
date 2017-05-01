@@ -91,5 +91,6 @@ function verifyAuth() {
 
 export {
     attemptToLogin,
-    attemptToLogout
+    attemptToLogout,
+    verifyAuth
 };
