@@ -14,10 +14,8 @@ class LoginContainerClass extends Component {
     handleSubmit(e) {
         e.preventDefault();
 
-        const getEmailValue = this.loginRef.getInputValues().email;
-        const getPasswordValue = this.loginRef.getInputValues().password;
-
-        this.props.getValuesOnSubmit(getEmailValue, getPasswordValue);
+        const {email, password} = this.loginRef.getInputValues();
+        this.props.getValuesOnSubmit(email, password);
     }
 
     render() {

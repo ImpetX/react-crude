@@ -45,15 +45,15 @@ function isVerifiedUser() {
 }
 
 function attemptToLogin(email, password) {
-    return function(dispatch) {
+    return dispatch => {
         dispatch(isLoginAttempt());
 
         firebaseAuth.signInWithEmailAndPassword(email, password)
-        .then(function(userInfo) {
+        .then(userInfo => {
             dispatch(isLoginSuccess(email, password, userInfo));
         })
 
-        .catch(function(error) {
+        .catch(error => {
             dispatch(isLoginFailed(email, password, error));
         });
 
@@ -61,22 +61,22 @@ function attemptToLogin(email, password) {
 }
 
 function attemptToLogout() {
-    return function(dispatch) {
+    return dispatch => {
         firebaseAuth.signOut()
-            .then(function() {
+            .then(() => {
                 dispatch(isLogOutSuccess());
             })
 
-            .catch(function(error) {
+            .catch(error => {
                 dispatch(isLogOutFailed(error));
             });
     }
 }
 
 function verifyAuth() {
-    return function(dispatch) {
+    return dispatch => {
         firebaseAuth.onAuthStateChanged(
-            function(user) {
+            user => {
                 console.log('onAuthStateChanged user', user);
                 if(user) {
                     dispatch(isVerifiedUser());
