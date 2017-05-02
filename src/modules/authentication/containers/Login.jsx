@@ -23,8 +23,8 @@ class LoginContainerClass extends Component {
     render() {
         return (
             <Login
-                ref={el => this.loginRef = el}
                 handleSubmit={this.handleSubmit}
+                ref={el => this.loginRef = el}
             />
         );
     }

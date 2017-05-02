@@ -77,6 +77,7 @@ function verifyAuth() {
     return function(dispatch) {
         firebaseAuth.onAuthStateChanged(
             function(user) {
+                console.log('onAuthStateChanged user', user);
                 if(user) {
                     dispatch(isVerifiedUser());
                 }
