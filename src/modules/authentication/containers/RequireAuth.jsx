@@ -12,7 +12,9 @@ function RequireAuth(WrappedComponent) {
     }
 
     function mapStateToProps(state) {
-        return {authenticated: state.authenticated};
+        return {
+            authenticated: state.auth.authenticated
+        };
     }
 
     return connect(mapStateToProps)(Auth);
