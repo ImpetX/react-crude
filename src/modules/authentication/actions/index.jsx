@@ -1,3 +1,5 @@
+import {hashHistory} from 'react-router';
+
 import {firebaseAuth} from 'Firebase/config';
 import ActionTypes from '../constants';
 
@@ -51,6 +53,7 @@ function attemptToLogin(email, password) {
         firebaseAuth.signInWithEmailAndPassword(email, password)
         .then(userInfo => {
             dispatch(isLoginSuccess(email, password, userInfo));
+            hashHistory.push('/');
         })
 
         .catch(error => {

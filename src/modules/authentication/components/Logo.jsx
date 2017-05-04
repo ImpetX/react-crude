@@ -12,8 +12,8 @@ const Logo = ({href, src}) => {
 };
 
 Logo.propTypes = {
-    href: React.PropTypes.string,
-    src: React.PropTypes.string
+    href: PropTypes.string,
+    src: PropTypes.string
 }
 
 export default Logo;

@@ -1,15 +1,36 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {browserHistory} from 'react-router';
+import {hashHistory} from 'react-router';
 
 function RequireAuth(WrappedComponent) {
     class Auth extends Component {
+        componentWillMount() {
+            console.log("!this.props.authenticated", !this.props.authenticated);
+            if (!this.props.authenticated) {
+                let hasLocalStorageUser = false;
+
+                for (let key in localStorage) {
+                    if (key.startsWith("firebase:authUser:")) {
+                        hasLocalStorageUser = true;
+                    }
+                }
+
+                if (!hasLocalStorageUser) {
+                    hashHistory.push('/login');
+                }
+            }
+        }
         render() {
             return (
                 <WrappedComponent {...this.props}/>
             );
         }
     }
+
+    Auth.propTypes = {
+        authenticated: PropTypes.bool
+    };
 
     function mapStateToProps(state) {
         return {
