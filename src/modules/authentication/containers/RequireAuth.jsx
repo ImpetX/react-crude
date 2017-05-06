@@ -6,7 +6,6 @@ import {hashHistory} from 'react-router';
 function RequireAuth(WrappedComponent) {
     class Auth extends Component {
         componentWillMount() {
-            console.log("!this.props.authenticated", !this.props.authenticated);
             if (!this.props.authenticated) {
                 let hasLocalStorageUser = false;
 
