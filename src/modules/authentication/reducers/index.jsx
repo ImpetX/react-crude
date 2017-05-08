@@ -33,7 +33,9 @@ const AuthReducer = (state = defaultState, action) => {
             });
 
         case ActionTypes.LOGGED_IN_ERROR:
-            return Object.assign({}, state, isLoggedInFalse, authFailedState);
+            return Object.assign({}, state, isLoggedInFalse, authFailedState, {
+                errorCode: action.payload.code
+            });
 
         case ActionTypes.LOGOUT_SUCCESS:
             return Object.assign({}, state, isLoggedInFalse, authFailedState);

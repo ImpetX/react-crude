@@ -73,5 +73,6 @@ export default class Login extends Component {
 }
 
 Login.propTypes = {
-    handleSubmit: React.PropTypes.func
+    handleSubmit: React.PropTypes.func,
+    errorMessage: React.PropTypes.string
 }

@@ -24,3 +24,9 @@
 .inputs {
     margin-bottom: 25px;
 }
+
+.error {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #dd4248;
+}
