@@ -67,7 +67,6 @@ export default class Login extends Component {
                         raised theme={ButtonTheme}
                     />
                 </form>
-
             </div>
         );
     }

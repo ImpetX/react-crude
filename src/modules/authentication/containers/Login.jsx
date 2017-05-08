@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {attemptToLogin} from '../actions';
+import Loader from '../components/Loader';
 import Login from '../components/Login';
 
 
@@ -18,18 +19,35 @@ class LoginContainerClass extends Component {
         this.props.getValuesOnSubmit(email, password);
     }
 
+    showLoader() {
+        let shouldShowLoader = this.props.authStatus === 'pending' ? <Loader /> : null;
+
+        return shouldShowLoader;
+    }
+
     render() {
         return (
-            <Login
-                handleSubmit={this.handleSubmit}
-                ref={el => this.loginRef = el}
-            />
+            <div>
+                <Login
+                    handleSubmit={this.handleSubmit}
+                    ref={el => this.loginRef = el}
+                />
+
+                {this.showLoader()}
+            </div>
         );
     }
 }
 
 LoginContainerClass.propTypes = {
-    getValuesOnSubmit: React.PropTypes.func
+    getValuesOnSubmit: PropTypes.func,
+    authStatus: PropTypes.any
+};
+
+const mapStateToProps = (state) => {
+    return {
+        authStatus: state.auth.authenticated
+    };
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -41,6 +59,6 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-const LoginContainer = connect(null, mapDispatchToProps)(LoginContainerClass);
+const LoginContainer = connect(mapStateToProps, mapDispatchToProps)(LoginContainerClass);
 
 export default LoginContainer;
