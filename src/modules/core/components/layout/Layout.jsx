@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 import Sidebar from './Sidebar';
-import Navbar from './Navbar';
+import NavbarContainer from 'modules/core/containers/Navbar';
 
 
 import Styles from './css/Layout.css';
@@ -13,7 +13,7 @@ export default class Layout extends Component {
             <div className={Styles.wrapper}>
                 <Sidebar />
                 <div className={Styles.pagewrapper}>
-                    <Navbar />
+                    <NavbarContainer />
                     <div className={Styles['content-wrapper']}>
                         {this.props.children}
                     </div>

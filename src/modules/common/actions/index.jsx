@@ -21,6 +21,7 @@ function attemptToLogout() {
         firebaseAuth.signOut()
             .then(() => {
                 dispatch(isLogOutSuccess());
+                hashHistory.push('/login');
             })
 
             .catch(error => {
