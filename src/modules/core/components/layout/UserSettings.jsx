@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import onClickOutside from 'react-onclickoutside';
 
 import Styles from './css/UserSettings.css';
@@ -53,7 +54,7 @@ class UserSettings extends Component {
                     <a href='#' className={Styles['dropdown-menu']}>
                         <span>Settings</span>
                     </a>
-                    <a href='#' className={Styles['dropdown-menu']}>
+                    <a href='#' className={Styles['dropdown-menu']} onClick={this.props.onLogoutClick}>
                         <span>Logout</span>
                     </a>
                 </div>
@@ -61,5 +62,9 @@ class UserSettings extends Component {
         );
     }
 }
+
+UserSettings.propTypes = {
+    onLogoutClick: PropTypes.func
+};
 
 export default onClickOutside(UserSettings);

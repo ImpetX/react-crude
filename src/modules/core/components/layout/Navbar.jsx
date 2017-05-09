@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 import UserSettings from './UserSettings';
 
@@ -8,8 +9,12 @@ export default class Navbar extends Component {
     render() {
         return (
             <div className={Styles.navigbar}>
-                <UserSettings />
+                <UserSettings onLogoutClick={this.props.onLogoutClick}/>
             </div>
         );
     }
 }
+
+Navbar.propTypes = {
+    onLogoutClick: PropTypes.func
+};

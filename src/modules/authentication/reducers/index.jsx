@@ -1,4 +1,5 @@
 import ActionTypes from '../constants';
+import CommonActionTypes from 'modules/common/constants';
 
 const isLoggedInTrue = {
     authenticated: true
@@ -37,10 +38,10 @@ const AuthReducer = (state = defaultState, action) => {
                 errorCode: action.payload.code
             });
 
-        case ActionTypes.LOGOUT_SUCCESS:
+        case CommonActionTypes.LOGOUT_SUCCESS:
             return Object.assign({}, state, isLoggedInFalse, authFailedState);
 
-        case ActionTypes.LOGOUT_ERROR:
+        case CommonActionTypes.LOGOUT_ERROR:
             return Object.assign({}, state, isLoggedInFalse, authFailedState);
 
         case ActionTypes.VERIFY_AUTH_USER:

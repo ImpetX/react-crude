@@ -2,6 +2,8 @@ import {hashHistory} from 'react-router';
 
 import {firebaseAuth} from 'Firebase/config';
 import ActionTypes from '../constants';
+import CommonActionTypes from 'modules/common/constants';
+import attemptToLogout from 'modules/common/actions';
 
 function isLoginAttempt() {
     return {
@@ -27,19 +29,6 @@ function isLoginFailed(email, password, payload) {
     };
 }
 
-function isLogOutSuccess() {
-    return {
-        type: ActionTypes.LOGOUT_SUCCESS
-    };
-}
-
-function isLogOutFailed(payload) {
-    return {
-        type: ActionTypes.LOGOUT_ERROR,
-        payload
-    };
-}
-
 function isVerifiedUser() {
     return {
         type: ActionTypes.VERIFY_AUTH_USER
@@ -60,19 +49,6 @@ function attemptToLogin(email, password) {
             dispatch(isLoginFailed(email, password, error));
         });
 
-    }
-}
-
-function attemptToLogout() {
-    return dispatch => {
-        firebaseAuth.signOut()
-            .then(() => {
-                dispatch(isLogOutSuccess());
-            })
-
-            .catch(error => {
-                dispatch(isLogOutFailed(error));
-            });
     }
 }
 
