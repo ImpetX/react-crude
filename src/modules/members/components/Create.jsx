@@ -11,7 +11,7 @@ import PageHeading from '../../../lib/pageheader/PageHeading';
 import Styles from './css/Create.css';
 import InputTheme from '../../../stylesheet/common/Theme/Input.css';
 import DatepickerTheme from '../../../stylesheet/common/Theme/Datepicker.css';
-import UploadButtonTheme from '../../../tylesheet/common/Theme/Button/Upload.css';
+import UploadButtonTheme from '../../../stylesheet/common/Theme/Button/Upload.css';
 import SaveButtonTheme from '../../../stylesheet/common/Theme/Button/Save.css';
 import CancelButtonTheme from '../../../stylesheet/common/Theme/Button/Cancel.css';
 import BackButtonTheme from '../../../stylesheet/common/Theme/Button/Back.css';

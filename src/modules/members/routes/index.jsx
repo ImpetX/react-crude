@@ -1,11 +1,16 @@
 import React from 'react';
-import {Route} from 'react-router';
+import {Route, IndexRoute} from 'react-router';
 
+import MemberLayout from '../layout';
 import MemberList from '../components/List';
+import MemberCreate from '../components/Create';
 
 const MemberRoute = () => {
     return (
-        <Route path='member-list' component={MemberList} />
+        <Route path='members' component={MemberLayout}>
+            <IndexRoute component={MemberList} />
+            <Route path='add' component={MemberCreate} />
+        </Route>
     );
 }
 

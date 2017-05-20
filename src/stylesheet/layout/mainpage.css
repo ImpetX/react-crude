@@ -1,0 +1,14 @@
+/*
+    @author: Kamal Sharif
+
+    @createdAt: 20.5.2017
+    @lastModified: 20.5.2017
+    @modifiedBy: Kamal Sharif
+
+    @fileName: mainpage.css
+    @filePath: ./src/stylesheet/layout/layout.css
+*/
+
+.content-wrapper {
+    padding: 75px 15px 15px 25px;
+}

@@ -14,9 +14,7 @@ export default class Layout extends Component {
                 <Sidebar />
                 <div className={Styles.pagewrapper}>
                     <NavbarContainer />
-                    <div className={Styles['content-wrapper']}>
-                        {this.props.children}
-                    </div>
+                    {this.props.children}
                 </div>
             </div>
         );

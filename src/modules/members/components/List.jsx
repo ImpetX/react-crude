@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Dialog from 'react-toolbox/lib/dialog';
+import {hashHistory} from 'react-router';
 
 import Searchbox from '../../../lib/Searchbox';
 import ListTable from '../../../lib/Table';
@@ -18,6 +19,7 @@ export default class MemberList extends Component {
         };
 
         this.handleModalToggle = this.handleModalToggle.bind(this);
+        this.handlePageheaderClick = this.handlePageheaderClick.bind(this);
     }
 
     handleModalToggle() {
@@ -44,11 +46,16 @@ export default class MemberList extends Component {
         return actions;
     }
 
+    handlePageheaderClick(e) {
+        e.preventDefault();
+        hashHistory.push('/members/add');
+    }
+
     render() {
         return (
             <div>
                 <div className={Styles['header-wrapper']}>
-                    <PageHeader moduleName='Members' componentName='List' />
+                    <PageHeader moduleName='Members' componentName='List' onClick={this.handlePageheaderClick}/>
                 </div>
 
                 <div className={Styles['searchbox-wrapper']}>

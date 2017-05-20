@@ -15,7 +15,7 @@ export default class Sidebar extends Component {
                 </div>
 
                 <div className={Styles.menus}>
-                    <Link to='/member-list' activeClassName={Styles['menu-active']} className={Styles.menu}>
+                    <Link to='/members' activeClassName={Styles['menu-active']} className={Styles.menu}>
                         <span>Members</span>
                     </Link>
                 </div>
