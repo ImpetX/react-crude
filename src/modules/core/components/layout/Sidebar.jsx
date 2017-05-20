@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router';
 
 
 import Styles from './css/Sidebar.css';
@@ -9,14 +10,14 @@ export default class Sidebar extends Component {
             <div className={Styles.sidebar}>
                 <div className={Styles['logo-wrapper']}>
                     <a href='#' className={Styles['logo-link']}>
-                        <img src='../../assets/images/logo/logo.svg' alt='Logo' className={Styles.logo}/>
+                        <img src='./src/assets/images/logo/logo.svg' alt='Logo' className={Styles.logo}/>
                     </a>
                 </div>
 
                 <div className={Styles.menus}>
-                    <a href='#' className={Styles.menu}>
+                    <Link to='/member-list' activeClassName={Styles['menu-active']} className={Styles.menu}>
                         <span>Members</span>
-                    </a>
+                    </Link>
                 </div>
             </div>
         );
