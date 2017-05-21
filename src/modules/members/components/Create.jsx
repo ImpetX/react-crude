@@ -157,6 +157,7 @@ export default class MemberCreate extends Component {
     }
 
     handleFileUpload(e) {
+        console.log('file uploaded =>=>', e.target.files[0]);
         return e.target.files[0];
     }
 
@@ -179,6 +180,7 @@ export default class MemberCreate extends Component {
                                     theme={InputTheme}
                                     value={this.state.namesBengali}
                                     onChange={this.handleNameBengaliChange}
+                                    required={true}
                                 />
                             </div>
 
@@ -189,6 +191,7 @@ export default class MemberCreate extends Component {
                                     theme={InputTheme}
                                     value={this.state.namesEnglish}
                                     onChange={this.handleNameEnglishChange}
+                                    required={true}
                                 />
                             </div>
                         </div>
@@ -201,6 +204,7 @@ export default class MemberCreate extends Component {
                                     theme={InputTheme}
                                     value={this.state.fatherName}
                                     onChange={this.handleFatherNameChange}
+                                    required={true}
                                 />
                             </div>
 
@@ -210,7 +214,10 @@ export default class MemberCreate extends Component {
                                     label="Mother's name"
                                     theme={InputTheme}
                                     value={this.state.motherName}
-                                    onChange={this.handleMotherNameChange}/>
+                                    onChange={this.handleMotherNameChange}
+                                    required={true}
+                                />
+
                             </div>
                         </div>
 
@@ -224,6 +231,7 @@ export default class MemberCreate extends Component {
                                     onChange={this.handlePresentAddressChange}
                                     multiline
                                     rows={1}
+                                    required={true}
                                     />
                             </div>
 
@@ -236,6 +244,7 @@ export default class MemberCreate extends Component {
                                     onChange={this.handlePermanentAddressChange}
                                     multiline
                                     rows={1}
+                                    required={true}
                                 />
                             </div>
                         </div>
@@ -248,6 +257,7 @@ export default class MemberCreate extends Component {
                                     theme={InputTheme}
                                     value={this.state.occupation}
                                     onChange={this.handleOccupationChange}
+                                    required={true}
                                 />
                             </div>
                             <div className={Styles.onethird}>
@@ -257,6 +267,7 @@ export default class MemberCreate extends Component {
                                     theme={InputTheme}
                                     value={this.state.mobileNumber}
                                     onChange={this.handleMobileNumberChange}
+                                    required={true}
                                 />
                             </div>
 
@@ -266,6 +277,7 @@ export default class MemberCreate extends Component {
                                     onChange={this.handleDateOfBirthChange}
                                     value={this.state.dateOfBirth}
                                     theme={DatepickerTheme}
+                                    required={true}
                                 />
                             </div>
 
@@ -276,6 +288,7 @@ export default class MemberCreate extends Component {
                                     value={this.state.maritalStatus}
                                     onChange={this.handleMaritalStatusChange}
                                     source={this.getMaritalStatusSource()}
+                                    required={true}
                                 />
                             </div>
 
@@ -286,6 +299,7 @@ export default class MemberCreate extends Component {
                                     theme={InputTheme}
                                     value={this.state.nationality}
                                     onChange={this.handleNationalityChange}
+                                    required={true}
                                 />
                             </div>
 
@@ -296,6 +310,7 @@ export default class MemberCreate extends Component {
                                     theme={InputTheme}
                                     value={this.state.religion}
                                     onChange={this.handleReligionChange}
+                                    required={true}
                                 />
                             </div>
 
@@ -306,6 +321,7 @@ export default class MemberCreate extends Component {
                                     value={this.state.bloodGroup}
                                     onChange={this.handleBloodGroupChange}
                                     source={this.getBloodGroupSource()}
+                                    required={true}
                                 />
                             </div>
                         </div>
@@ -318,6 +334,7 @@ export default class MemberCreate extends Component {
                                     theme={InputTheme}
                                     value={this.state.referrerName}
                                     onChange={this.handleReferrerNameChange}
+                                    required={true}
                                 />
                             </div>
 
@@ -328,6 +345,7 @@ export default class MemberCreate extends Component {
                                     theme={InputTheme}
                                     value={this.state.referrerContact}
                                     onChange={this.handleReferrerContactChange}
+                                    required={true}
                                 />
                             </div>
                         </div>
@@ -340,6 +358,7 @@ export default class MemberCreate extends Component {
                                     value={this.state.certificateType}
                                     onChange={this.handleCertificateTypeChange}
                                     source={this.getCertificateTypeSource()}
+                                    required={true}
                                 />
                             </div>
 
@@ -350,6 +369,7 @@ export default class MemberCreate extends Component {
                                     theme={InputTheme}
                                     value={this.state.idNumber}
                                     onChange={this.handleIdNumberChange}
+                                    required={true}
                                 />
                             </div>
 
@@ -359,6 +379,7 @@ export default class MemberCreate extends Component {
                                     onChange={this.handleMembershipDateChange}
                                     value={this.state.membershipDate}
                                     theme={DatepickerTheme}
+                                    required={true}
                                 />
                             </div>
                         </div>

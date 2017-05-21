@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Styles from 'styles/layout/mainpage.css';
 
-const MemberLayout = ({children}) => {
+const CommonLayout = ({children}) => {
     return (
         <div className={Styles['content-wrapper']}>
             {children}
@@ -11,8 +11,8 @@ const MemberLayout = ({children}) => {
     );
 };
 
-MemberLayout.propTypes = {
+CommonLayout.propTypes = {
     children: PropTypes.node
 };
 
-export default MemberLayout;
+export default CommonLayout;
