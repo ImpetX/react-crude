@@ -7,15 +7,26 @@ function isMemberAddAttempt() {
     }
 }
 
-function isMemberAddSuccess() {
+function isMemberAddSuccess(memberData) {
     return {
-        type: ActionTypes.MEMBER_ADD_SUCCESS
+        type: ActionTypes.MEMBER_ADD_SUCCESS,
+        memberData
     }
 }
 
 function isMemberAddError() {
     return {
         type: ActionTypes.MEMBER_ADD_ERROR
+    }
+}
+
+function memberAddProcess(memberData) {
+    return dispatch => {
+        dispatch(isMemberAddAttempt());
+
+        let membersRef = ref.child('members');
+        let newMemberRef = membersRef.push();
+
     }
 }
 
