@@ -1,0 +1,7 @@
+const ActionTypes = {
+    MEMBER_ADD_ATTEMPT: 'MEMBER_ADD_ATTEMPT',
+    MEMBER_ADD_SUCCESS: 'MEMBER_ADD_SUCCESS',
+    MEMBER_ADD_ERROR: 'MEMBER_ADD_ERROR'
+};
+
+export default ActionTypes;
