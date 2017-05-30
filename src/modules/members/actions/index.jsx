@@ -27,6 +27,27 @@ function memberAddProcess(memberData) {
         let membersRef = ref.child('members');
         let newMemberRef = membersRef.push();
 
+        newMemberRef.set({
+            bengaliName: memberData.bengaliName,
+            englishName: memberData.englishName,
+            fatherName: memberData.fatherName,
+            motherName: memberData.motherName,
+            presentAddress: memberData.presentAddress,
+            permanentAddress: memberData.permanentAddress,
+            occupation: memberData.occupation,
+            mobileNumber: memberData.mobileNumber,
+            birthDate: memberData.birthDate,
+            maritalStatus: memberData.maritalStatus,
+            nationality: memberData.nationality,
+            religion: memberData.religion,
+            bloodGroup: memberData.bloodGroup,
+            referrerName: memberData.referrerName,
+            referrerContact: memberData.referrerContact,
+            certificateType: memberData.certificateType,
+            certificateNumber: memberData.certificateNumber,
+            membershipDate: memberData.membershipDate
+        })
+
     }
 }
 
