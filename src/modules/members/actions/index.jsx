@@ -7,38 +7,38 @@ function isMemberAddAttempt() {
     }
 }
 
-function isImageUploadSuccess(snapshot) {
+function isImageUploadSuccess(payload) {
     return {
         type: ActionTypes.IMAGE_UPLOAD_SUCCESS,
-        snapshot
+        payload
     }
 }
 
-function isImageUploadError(error) {
+function isImageUploadError(payload) {
     return {
         type: ActionTypes.IMAGE_UPLOAD_ERROR,
-        error
+        payload
     }
 }
 
-function isMetadataError(error) {
+function isMetadataError(payload) {
     return {
         type: ActionTypes.GET_METADATA_ERROR,
-        error
+        payload
     }
 }
 
-function isMemberAddSuccess(data) {
+function isMemberAddSuccess(payload) {
     return {
         type: ActionTypes.MEMBER_ADD_SUCCESS,
-        data
+        payload
     }
 }
 
-function isMemberAddError(error) {
+function isMemberAddError(payload) {
     return {
         type: ActionTypes.MEMBER_ADD_ERROR,
-        error
+        payload
     }
 }
 
@@ -99,3 +99,7 @@ function memberAddProcess(memberData, imageFile) {
 
     }
 }
+
+export {
+    memberAddProcess
+};
