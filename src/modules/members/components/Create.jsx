@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import Input from 'react-toolbox/lib/input';
 import Dropdown from 'react-toolbox/lib/dropdown';
 import DatePicker from 'react-toolbox/lib/date_picker';
@@ -157,9 +158,29 @@ export default class MemberCreate extends Component {
         );
     }
 
-    handleFileUpload(e) {
-        console.log('file uploaded =>=>', e.target.files[0]);
-        return e.target.files[0];
+    getMemberCreateValues() {
+        let valuesObj = {
+            bengaliName: this.state.nameBengali,
+            englishName: this.state.englishName,
+            fatherName: this.state.fatherName,
+            motherName: this.state.motherName,
+            presentAddress: this.state.presentAddress,
+            permanentAddress: this.state.permanentAddress,
+            occupation: this.state.occupation,
+            mobileNumber: this.state.mobileNumber,
+            birthDate: this.state.dateOfBirth,
+            maritalStatus: this.state.maritalStatus,
+            nationality: this.state.nationality,
+            religion: this.state.religion,
+            bloodGroup: this.state.bloodGroup,
+            referrerName: this.state.referrerName,
+            referrerContact: this.state.referrerContact,
+            certificateType: this.state.certificateType,
+            certificateNumber: this.state.idNumber,
+            membershipDate: this.state.membershipDate,
+        };
+
+        return valuesObj;
     }
 
     render() {
@@ -172,7 +193,7 @@ export default class MemberCreate extends Component {
                 <p className={Styles['required-notif']}>**All the fields are required.</p>
 
                 <div>
-                    <form>
+                    <form onSubmit={this.props.handleSubmit}>
                         <div className={Styles.inputs}>
                             <div className={Styles.names}>
                                 <Input
@@ -394,7 +415,7 @@ export default class MemberCreate extends Component {
                                 <BrowseButton
                                   icon="file_upload"
                                   label="Upload image"
-                                  onChange={this.handleFileUpload}
+                                  onChange={this.props.handleFileUpload}
                                   raised
                                   theme={UploadButtonTheme}
                                 />
@@ -434,4 +455,9 @@ export default class MemberCreate extends Component {
             </div>
         );
     }
+}
+
+MemberCreate.propTypes = {
+    handleSubmit: PropTypes.func,
+    handleFileUpload: PropTypes.func
 }
