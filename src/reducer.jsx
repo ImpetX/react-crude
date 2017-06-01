@@ -1,11 +1,11 @@
 import {combineReducers} from 'redux';
 
 import AuthReducer from 'modules/authentication/reducers';
-import MemberReducer from 'modules/authentication/reducers';
+import {MemberCreateReducer} from 'modules/members/reducers';
 
 const rootReducer = combineReducers({
     auth: AuthReducer,
-    member: MemberReducer
+    addMember: MemberCreateReducer
 });
 
 export default rootReducer;

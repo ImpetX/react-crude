@@ -149,6 +149,7 @@ export default class MemberCreate extends Component {
     }
 
     handleChange(name, value) {
+        console.log('handleChange name', name, 'handleChange value', value);
         this.setState(
             {
                 [name]: value
