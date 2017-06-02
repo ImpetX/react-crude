@@ -38,7 +38,9 @@ export default class MemberCreate extends Component {
             dateOfBirth: '',
             certificateType: '',
             idNumber: '',
-            membershipDate: ''
+            membershipDate: '',
+            memberImageMetadata: '',
+            memberImage: ''
         };
 
         this.handleNameBengaliChange = this.handleChange.bind(this, 'nameBengali');
@@ -59,6 +61,7 @@ export default class MemberCreate extends Component {
         this.handleCertificateTypeChange = this.handleChange.bind(this, 'certificateType');
         this.handleIdNumberChange = this.handleChange.bind(this, 'idNumber');
         this.handleMembershipDateChange = this.handleChange.bind(this, 'membershipDate');
+        this.handleFileUpload = this.handleFileUpload.bind(this);
     }
 
     getMaritalStatusSource() {
@@ -158,7 +161,7 @@ export default class MemberCreate extends Component {
         );
     }
 
-    getMemberCreateValues() {
+    getMemberCreateObj() {
         let valuesObj = {
             bengaliName: this.state.nameBengali,
             englishName: this.state.englishName,
@@ -178,12 +181,33 @@ export default class MemberCreate extends Component {
             certificateType: this.state.certificateType,
             certificateNumber: this.state.idNumber,
             membershipDate: this.state.membershipDate,
+            memberImage: this.state.memberImageMetadata
         };
 
         return valuesObj;
     }
 
+    handleFileUpload(e) {
+        e.preventDefault();
+
+        let reader = new FileReader();
+        let file = e.target.files[0];
+
+        reader.onload = () => {
+            this.setState(
+                {
+                    memberImageMetadata: file,
+                    memberImage: reader.result
+                }
+            );
+        }
+
+        reader.readAsDataURL(file);
+    }
+
     render() {
+        console.log('MemberCreate state ==>>', this.state);
+        let {memberImageMetadata} = this.state;
         return (
             <div>
                 <div className={Styles['header-wrapper']}>
@@ -408,14 +432,14 @@ export default class MemberCreate extends Component {
 
                         <div className={Styles.inputs}>
                             <div className={Styles.filepreview}>
-                                <img src='' alt='' className={Styles.profileimg}/>
+                                <img src={this.state.memberImage} alt='' className={Styles.profileimg}/>
                             </div>
 
                             <div className={Styles.fileupload}>
                                 <BrowseButton
                                   icon="file_upload"
                                   label="Upload image"
-                                  onChange={this.props.handleFileUpload}
+                                  onChange={this.handleFileUpload}
                                   raised
                                   theme={UploadButtonTheme}
                                 />
@@ -427,6 +451,7 @@ export default class MemberCreate extends Component {
                                 <Button
                                   icon="save"
                                   label="Save"
+                                  type='submit'
                                   raised
                                   theme={SaveButtonTheme}
                                 />
@@ -458,6 +483,5 @@ export default class MemberCreate extends Component {
 }
 
 MemberCreate.propTypes = {
-    handleSubmit: PropTypes.func,
-    handleFileUpload: PropTypes.func
+    handleSubmit: PropTypes.func
 }

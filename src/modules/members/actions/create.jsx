@@ -42,13 +42,13 @@ function isMemberAddError(payload) {
     }
 }
 
-function memberAddProcess(memberData, imageFile) {
+function memberAddProcess(memberData) {
     return dispatch => {
         dispatch(isMemberAddAttempt());
 
         let imageRef = storageRef.child('images');
-        let memberImageRef = imageRef.child(`${imageFile}`);
-        let uploadImage = memberImageRef.put(imageFile);
+        let memberImageRef = imageRef.child(`${memberData.memberImage.name}`);
+        let uploadImage = memberImageRef.put(memberData.memberImage);
 
         uploadImage.then(snapshot => {
             dispatch(isImageUploadSuccess(snapshot));
