@@ -80,6 +80,7 @@ function memberAddProcess(memberData) {
                         memberImage: metadata.downloadURLs
                     })
                     .then(data => {
+                        console.log('member Create Action value', data);
                         dispatch(isMemberAddSuccess(data));
                     })
 

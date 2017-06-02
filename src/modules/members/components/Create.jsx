@@ -153,7 +153,6 @@ export default class MemberCreate extends Component {
     }
 
     handleChange(name, value) {
-        console.log('handleChange name', name, 'handleChange value', value);
         this.setState(
             {
                 [name]: value
@@ -164,7 +163,7 @@ export default class MemberCreate extends Component {
     getMemberCreateObj() {
         let valuesObj = {
             bengaliName: this.state.nameBengali,
-            englishName: this.state.englishName,
+            englishName: this.state.nameEnglish,
             fatherName: this.state.fatherName,
             motherName: this.state.motherName,
             presentAddress: this.state.presentAddress,
@@ -206,8 +205,10 @@ export default class MemberCreate extends Component {
     }
 
     render() {
-        console.log('MemberCreate state ==>>', this.state);
         let {memberImageMetadata} = this.state;
+
+        console.log('MemberCreate state', typeof this.state.membershipDate);
+
         return (
             <div>
                 <div className={Styles['header-wrapper']}>
@@ -224,7 +225,7 @@ export default class MemberCreate extends Component {
                                     type='text'
                                     label='Name [Bengali]'
                                     theme={InputTheme}
-                                    value={this.state.namesBengali}
+                                    value={this.state.nameBengali}
                                     onChange={this.handleNameBengaliChange}
                                     required={true}
                                 />
@@ -235,7 +236,7 @@ export default class MemberCreate extends Component {
                                     type='text'
                                     label='Name [English]'
                                     theme={InputTheme}
-                                    value={this.state.namesEnglish}
+                                    value={this.state.nameEnglish}
                                     onChange={this.handleNameEnglishChange}
                                     required={true}
                                 />
