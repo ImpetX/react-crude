@@ -170,7 +170,7 @@ export default class MemberCreate extends Component {
             permanentAddress: this.state.permanentAddress,
             occupation: this.state.occupation,
             mobileNumber: this.state.mobileNumber,
-            birthDate: this.state.dateOfBirth,
+            birthDate: this.state.dateOfBirth.toDateString(),
             maritalStatus: this.state.maritalStatus,
             nationality: this.state.nationality,
             religion: this.state.religion,
@@ -179,7 +179,7 @@ export default class MemberCreate extends Component {
             referrerContact: this.state.referrerContact,
             certificateType: this.state.certificateType,
             certificateNumber: this.state.idNumber,
-            membershipDate: this.state.membershipDate,
+            membershipDate: this.state.membershipDate.toDateString(),
             memberImage: this.state.memberImageMetadata
         };
 

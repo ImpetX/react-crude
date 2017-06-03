@@ -22,21 +22,13 @@ const MemberCreateReducer = (state = defaultState, action) => {
 
         case ActionTypes.IMAGE_UPLOAD_SUCCESS:
             return Object.assign({}, state, {
-                showLoader: false,
-                imageSnapshot: action.payload
+                showLoader: false
             });
 
         case ActionTypes.IMAGE_UPLOAD_ERROR:
             return Object.assign({}, state, {
                 showLoader: false,
                 imageUploadErrorCode: action.payload.code
-            });
-
-
-        case ActionTypes.GET_METADATA_ERROR:
-            return Object.assign({}, state, {
-                showLoader: false,
-                metadataErrorCode: action.payload.code
             });
 
         default:
