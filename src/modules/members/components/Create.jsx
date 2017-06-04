@@ -6,7 +6,7 @@ import Dropdown from 'react-toolbox/lib/dropdown';
 import DatePicker from 'react-toolbox/lib/date_picker';
 import {Button, BrowseButton} from "react-toolbox/lib/button";
 
-
+import initialState from '../constants/initialState';
 import PageHeading from '../../../lib/pageheader/PageHeading';
 
 
@@ -21,28 +21,7 @@ import BackButtonTheme from '../../../stylesheet/common/Theme/Button/Back.css';
 export default class MemberCreate extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            nameBengali : '',
-            nameEnglish : '',
-            fatherName: '',
-            motherName: '',
-            presentAddress: '',
-            permanentAddress: '',
-            occupation: '',
-            mobileNumber: '',
-            maritalStatus: '',
-            nationality: '',
-            religion: '',
-            bloodGroup:'',
-            referrerName: '',
-            referrerContact: '',
-            dateOfBirth: '',
-            certificateType: '',
-            idNumber: '',
-            membershipDate: '',
-            memberImageMetadata: '',
-            memberImage: ''
-        };
+        this.state = initialState;
 
         this.handleNameBengaliChange = this.handleChange.bind(this, 'nameBengali');
         this.handleNameEnglishChange = this.handleChange.bind(this, 'nameEnglish');
@@ -64,6 +43,7 @@ export default class MemberCreate extends Component {
         this.handleMembershipDateChange = this.handleChange.bind(this, 'membershipDate');
         this.handleFileUpload = this.handleFileUpload.bind(this);
         this.goToListPage = this.goToListPage.bind(this);
+        this.handleCancelButtonClick = this.handleCancelButtonClick.bind(this);
     }
 
     getMaritalStatusSource() {
@@ -209,6 +189,14 @@ export default class MemberCreate extends Component {
     goToListPage(e) {
         e.preventDefault();
         hashHistory.push('/members');
+    }
+
+    handleCancelButtonClick(e) {
+        e.preventDefault();
+
+        this.setState(
+            initialState
+        );
     }
 
     render() {
@@ -471,6 +459,7 @@ export default class MemberCreate extends Component {
                                   label="Cancel"
                                   raised
                                   theme={CancelButtonTheme}
+                                  onClick={this.handleCancelButtonClick}
                                 />
                             </div>
 
