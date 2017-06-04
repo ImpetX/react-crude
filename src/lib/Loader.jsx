@@ -1,7 +1,7 @@
 import React from 'react';
 import ProgressBar from 'react-toolbox/lib/progress_bar';
 
-import Styles from './css/Loader';
+import Styles from 'styles/common/Loader';
 
 const Loader = () => {
     return (

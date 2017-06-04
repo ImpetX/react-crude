@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {attemptToLogin} from '../actions';
-import Loader from '../components/Loader';
+import Loader from 'lib/Loader';
 import Login from '../components/Login';
 import Error from '../components/Error';
 

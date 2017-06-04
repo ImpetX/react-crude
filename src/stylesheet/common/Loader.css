@@ -1,14 +1,12 @@
 /*
     @author: Kamal Sharif
 
-    @createdAt: 8.5.2017
-    @lastModified: 8.5.2017
+    @createdAt: 4.6.2017
+    @lastModified: 4.6.2017
     @modifiedBy: Kamal Sharif
 
-    @moduleName: authentication
-    @modulePath: ./src/modules/authentication
     @fileName: Loader.css
-    @filePath: ./src/modules/authentication/components/css/Loader.css
+    @filePath: ./src/stylesheet/common/Loader.css
 */
 
 .loader {

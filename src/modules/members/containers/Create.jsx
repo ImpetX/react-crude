@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 
 import {memberAddProcess} from '../actions';
 import MemberCreate from '../components/Create';
+import Loader from 'lib/Loader';
 
 class MemberCreateContainerClass extends Component {
     constructor(props) {
@@ -18,19 +19,35 @@ class MemberCreateContainerClass extends Component {
         this.props.getMemberCreateObjOnSubmit(memberData);
     }
 
+    showLoader() {
+        let shouldShowLoader = this.props.showLoader === true ? <Loader /> : null;
+
+        return shouldShowLoader;
+    }
+
     render() {
         return (
-            <MemberCreate
-                handleSubmit={this.handleSubmit}
-                ref={el => this.memberCreateComponentRef = el}
-            />
+            <div>
+                <MemberCreate
+                    handleSubmit={this.handleSubmit}
+                    ref={el => this.memberCreateComponentRef = el}
+                />
+                {this.showLoader()}
+            </div>
         );
     }
 }
 
 MemberCreateContainerClass.propTypes = {
-    getMemberCreateObjOnSubmit: PropTypes.func
+    getMemberCreateObjOnSubmit: PropTypes.func,
+    showLoader: PropTypes.bool
 };
+
+const mapStateToProps = (state) => {
+    return {
+        showLoader: state.addMember.showLoader
+    }
+}
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -40,6 +57,6 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-const MemberCreateContainer = connect(null, mapDispatchToProps)(MemberCreateContainerClass);
+const MemberCreateContainer = connect(mapStateToProps, mapDispatchToProps)(MemberCreateContainerClass);
 
 export default MemberCreateContainer;

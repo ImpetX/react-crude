@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import {hashHistory} from 'react-router';
 import Input from 'react-toolbox/lib/input';
 import Dropdown from 'react-toolbox/lib/dropdown';
 import DatePicker from 'react-toolbox/lib/date_picker';
@@ -62,6 +63,7 @@ export default class MemberCreate extends Component {
         this.handleIdNumberChange = this.handleChange.bind(this, 'idNumber');
         this.handleMembershipDateChange = this.handleChange.bind(this, 'membershipDate');
         this.handleFileUpload = this.handleFileUpload.bind(this);
+        this.goToListPage = this.goToListPage.bind(this);
     }
 
     getMaritalStatusSource() {
@@ -202,6 +204,11 @@ export default class MemberCreate extends Component {
         }
 
         reader.readAsDataURL(file);
+    }
+
+    goToListPage(e) {
+        e.preventDefault();
+        hashHistory.push('/members');
     }
 
     render() {
@@ -473,6 +480,7 @@ export default class MemberCreate extends Component {
                                   label="Back"
                                   raised
                                   theme={BackButtonTheme}
+                                  onClick={this.goToListPage}
                                 />
                             </div>
                         </div>
