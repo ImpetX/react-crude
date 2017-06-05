@@ -13,10 +13,16 @@ class MemberCreateContainerClass extends Component {
     }
 
     handleSubmit(e) {
-        const memberData = this.memberCreateComponentRef.getMemberCreateObj();
-        console.log('container memberData', memberData);
+        let formValidationResult = this.memberCreateComponentRef.handleFormValidation();
 
-        this.props.getMemberCreateObjOnSubmit(memberData);
+        if (formValidationResult !== 'no error') {
+
+        }
+        else {
+            const memberData = this.memberCreateComponentRef.getMemberCreateObj();
+            console.log('container memberData', memberData);
+            this.props.getMemberCreateObjOnSubmit(memberData);
+        }
     }
 
     showLoader() {
