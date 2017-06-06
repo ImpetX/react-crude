@@ -1,0 +1,22 @@
+/*
+    @author: Kamal Sharif
+
+    @createdAt: 6.6.2017
+    @lastModified: 6.6.2017
+    @modifiedBy: Kamal Sharif
+
+    @fileName: Notification.css
+    @filePath: ./src/stylesheet/common/Notification.css
+*/
+
+.notification {
+    position: fixed;
+    top: 0;
+    left: 150px;
+    z-index: 149;
+    width: 100%;
+    padding: 10px 15px;
+    color: #fff;
+    background-color: #dd4248;
+    text-align: center;
+}

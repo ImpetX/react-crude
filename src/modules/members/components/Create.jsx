@@ -152,7 +152,7 @@ export default class MemberCreate extends Component {
             permanentAddress: this.state.permanentAddress,
             occupation: this.state.occupation,
             mobileNumber: this.state.mobileNumber,
-            birthDate: this.state.dateOfBirth.toDateString(),
+            birthDate: this.state.dateOfBirth,
             maritalStatus: this.state.maritalStatus,
             nationality: this.state.nationality,
             religion: this.state.religion,
@@ -161,45 +161,12 @@ export default class MemberCreate extends Component {
             referrerContact: this.state.referrerContact,
             certificateType: this.state.certificateType,
             certificateNumber: this.state.idNumber,
-            membershipDate: this.state.membershipDate.toDateString(),
+            membershipDate: this.state.membershipDate,
             memberImage: this.state.memberImageMetadata
         };
 
         return valuesObj;
     }
-
-    handleFormValidation() {
-        let formValues = this.getMemberCreateObj();
-
-        if (formValues.birthDate === '') {
-            return 'Birthdate';
-        }
-
-        else if (formValues.maritalStatus === '') {
-            return 'Marital Status';
-        }
-
-        else if (formValues.bloodGroup === '') {
-            return 'Blood Group';
-        }
-
-        else if (formValues.certificateType === '') {
-            return 'Certificate type';
-        }
-
-        else if (formValues.membershipDate === '') {
-            return 'Membership date';
-        }
-
-        else if (formValues.memberImage === '') {
-            return 'Photo of the member';
-        }
-
-        else {
-            return 'no error';
-        }
-    }
-
 
     handleFileUpload(e) {
         e.preventDefault();
@@ -473,10 +440,6 @@ export default class MemberCreate extends Component {
                                   theme={UploadButtonTheme}
                                 />
                             </div>
-                        </div>
-
-                        <div>
-                            <p>Please provide [input name]</p>
                         </div>
 
                         <div className={Styles.inputs}>

@@ -9,6 +9,12 @@ const MemberCreateReducer = (state = defaultState, action) => {
                 showLoader: true
             });
 
+        case ActionTypes.DO_FORM_VALIDATION:
+            return Object.assign({}, state, {
+                showLoader: false,
+                emptyInput: action.keys
+            });
+
         case ActionTypes.MEMBER_ADD_SUCCESS:
             return Object.assign({}, state, {
                 showLoader: false
@@ -22,7 +28,8 @@ const MemberCreateReducer = (state = defaultState, action) => {
 
         case ActionTypes.IMAGE_UPLOAD_SUCCESS:
             return Object.assign({}, state, {
-                showLoader: false
+                showLoader: false,
+                fieldReset: true
             });
 
         case ActionTypes.IMAGE_UPLOAD_ERROR:

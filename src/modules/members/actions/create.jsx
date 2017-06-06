@@ -7,6 +7,13 @@ function isMemberAddAttempt() {
     }
 }
 
+function validateForm(arr) {
+    return {
+        type: ActionTypes.DO_FORM_VALIDATION,
+        keys: arr
+    }
+}
+
 function isImageUploadSuccess() {
     return {
         type: ActionTypes.IMAGE_UPLOAD_SUCCESS
@@ -41,53 +48,76 @@ function isMemberAddError(payload) {
 }
 
 function memberAddProcess(memberData) {
+    let arr = [];
+    let inputIsNotEmpty = true;
+
+    for (let key in memberData) {
+        if (memberData.hasOwnProperty(key)) {
+            if (memberData[key] === '') {
+                console.log('key', key);
+                arr.push(key);
+            }
+        }
+    }
+
+    console.log('arr ===>', arr);
+    if (arr.length > 0) {
+        inputIsNotEmpty = false;
+    }
+
     return dispatch => {
         dispatch(isMemberAddAttempt());
 
-        let imageRef = storageRef.child('images');
-        let memberImageRef = imageRef.child(`${memberData.memberImage.name}`);
-        let uploadImage = memberImageRef.put(memberData.memberImage);
+        if (inputIsNotEmpty) {
+            console.log('inputIsNotEmpty ==>');
+            let imageRef = storageRef.child('images');
+            let memberImageRef = imageRef.child(`${memberData.memberImage.name}`);
+            let uploadImage = memberImageRef.put(memberData.memberImage);
 
-        uploadImage.then(snapshot => {
-            dispatch(isImageUploadSuccess());
+            uploadImage.then(snapshot => {
+                dispatch(isImageUploadSuccess());
 
-            let membersRef = ref.child('members');
-            let newMemberRef = membersRef.push();
+                let membersRef = ref.child('members');
+                let newMemberRef = membersRef.push();
 
-            newMemberRef.set({
-                bengaliName: memberData.bengaliName,
-                englishName: memberData.englishName,
-                fatherName: memberData.fatherName,
-                motherName: memberData.motherName,
-                presentAddress: memberData.presentAddress,
-                permanentAddress: memberData.permanentAddress,
-                occupation: memberData.occupation,
-                mobileNumber: memberData.mobileNumber,
-                birthDate: memberData.birthDate,
-                maritalStatus: memberData.maritalStatus,
-                nationality: memberData.nationality,
-                religion: memberData.religion,
-                bloodGroup: memberData.bloodGroup,
-                referrerName: memberData.referrerName,
-                referrerContact: memberData.referrerContact,
-                certificateType: memberData.certificateType,
-                certificateNumber: memberData.certificateNumber,
-                membershipDate: memberData.membershipDate,
-                memberImage: snapshot.a.downloadURLs[0]
-            })
-            .then(() => {
-                dispatch(isMemberAddSuccess());
+                newMemberRef.set({
+                    bengaliName: memberData.bengaliName,
+                    englishName: memberData.englishName,
+                    fatherName: memberData.fatherName,
+                    motherName: memberData.motherName,
+                    presentAddress: memberData.presentAddress,
+                    permanentAddress: memberData.permanentAddress,
+                    occupation: memberData.occupation,
+                    mobileNumber: memberData.mobileNumber,
+                    birthDate: memberData.birthDate.toDateString(),
+                    maritalStatus: memberData.maritalStatus,
+                    nationality: memberData.nationality,
+                    religion: memberData.religion,
+                    bloodGroup: memberData.bloodGroup,
+                    referrerName: memberData.referrerName,
+                    referrerContact: memberData.referrerContact,
+                    certificateType: memberData.certificateType,
+                    certificateNumber: memberData.certificateNumber,
+                    membershipDate: memberData.membershipDate.toDateString(),
+                    memberImage: snapshot.a.downloadURLs[0]
+                })
+                .then(() => {
+                    dispatch(isMemberAddSuccess());
+                })
+
+                .catch(error => {
+                    dispatch(isMemberAddError(error));
+                })
             })
 
             .catch(error => {
-                dispatch(isMemberAddError(error));
-            })
-        })
+                dispatch(isImageUploadError(error));
+            });
+        }
 
-        .catch(error => {
-            dispatch(isImageUploadError(error));
-        });
-
+        else {
+            dispatch(validateForm(arr));
+        }
     }
 }
 

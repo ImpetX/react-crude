@@ -10,5 +10,6 @@
 */
 
 .content-wrapper {
+    position: relative;
     padding: 75px 15px 15px 25px;
 }
