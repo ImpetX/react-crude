@@ -66,7 +66,7 @@ class MemberCreateContainerClass extends Component {
         return errorMessages;
     }
 
-    showNotification() {
+    showFormValidationNotification() {
         let formValidationErrorArray = this.handleFormValidation();
         let defaultText = 'Please provide ';
         let displayNotification =  null;
@@ -98,7 +98,7 @@ class MemberCreateContainerClass extends Component {
                     ref={el => this.memberCreateComponentRef = el}
                 />
                 {this.showLoader()}
-                {this.showNotification()}
+                {this.showFormValidationNotification()}
             </div>
         );
     }

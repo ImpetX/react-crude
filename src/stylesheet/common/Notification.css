@@ -2,7 +2,7 @@
     @author: Kamal Sharif
 
     @createdAt: 6.6.2017
-    @lastModified: 6.6.2017
+    @lastModified: 7.6.2017
     @modifiedBy: Kamal Sharif
 
     @fileName: Notification.css
@@ -14,9 +14,28 @@
     top: 0;
     left: 150px;
     z-index: 149;
-    width: 100%;
+    width: calc(100% - 180px);
     padding: 10px 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     color: #fff;
     background-color: #dd4248;
     text-align: center;
+}
+
+.notification-text {
+    flex: 1;
+    font-size: 14px;
+}
+
+.notification-iconwrapper {
+    line-height: 0;
+}
+
+.notification-icon {
+    font-size: 20px;
+    cursor: pointer;
 }
