@@ -17,7 +17,8 @@ const MemberCreateReducer = (state = defaultState, action) => {
 
         case ActionTypes.MEMBER_ADD_SUCCESS:
             return Object.assign({}, state, {
-                showLoader: false
+                showLoader: false,
+                successNotification: true
             });
 
         case ActionTypes.MEMBER_ADD_ERROR:

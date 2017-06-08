@@ -12,12 +12,28 @@ class MemberCreateContainerClass extends Component {
     constructor(props) {
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.state = {
+            showNotification: true
+        }
+
+        this.hideNotification = this.hideNotification.bind(this);
     }
 
     handleSubmit(e) {
+        e.preventDefault();
         const memberData = this.memberCreateComponentRef.getMemberCreateObj();
         console.log('container memberData', memberData);
         this.props.getMemberCreateObjOnSubmit(memberData);
+    }
+
+    hideNotification() {
+        this.setState(
+            (prevState, props) => {
+                return {
+                    showNotification: !prevState.showNotification
+                }
+            }
+        );
     }
 
     showLoader() {
@@ -70,11 +86,19 @@ class MemberCreateContainerClass extends Component {
         let formValidationErrorArray = this.handleFormValidation();
         let defaultText = 'Please provide ';
         let displayNotification =  null;
+        let flag = true;
+
+        if(this.state.showNotification === false) {
+            flag = false;
+        }
 
         if (formValidationErrorArray.length > 0) {
-            displayNotification = <Notification
-                                    notification={defaultText + formValidationErrorArray.join(', ')}
-                                />
+            if(flag) {
+                displayNotification = <Notification
+                                        notification={defaultText + formValidationErrorArray.join(', ')}
+                                        onCancelClick={this.hideNotification}
+                                    />
+            }
         }
 
         return displayNotification;

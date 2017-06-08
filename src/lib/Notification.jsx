@@ -8,7 +8,7 @@ const Notification = props => {
     return (
         <div className={Styles.notification}>
             <p className={Styles['notification-text']}>{props.notification}</p>
-            <div className={Styles['notification-iconwrapper']}>
+            <div className={Styles['notification-iconwrapper']} onClick={props.onCancelClick}>
                 <FontIcon value='cancel' className={Styles['notification-icon']}/>
             </div>
         </div>
@@ -16,7 +16,8 @@ const Notification = props => {
 };
 
 Notification.propTypes = {
-    notification: PropTypes.string
+    notification: PropTypes.string,
+    onCancelClick: PropTypes.func
 }
 
 export default Notification;
