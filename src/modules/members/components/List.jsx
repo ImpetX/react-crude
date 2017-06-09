@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import Dialog from 'react-toolbox/lib/dialog';
 import {hashHistory} from 'react-router';
 
@@ -62,7 +63,9 @@ export default class MemberList extends Component {
                     <Searchbox />
                 </div>
                 <div className={Styles['table-wrapper']}>
-                    <ListTable onDeleteClick={this.handleModalToggle}/>
+                    <ListTable
+                        data={this.props.data}
+                        onDeleteClick={this.handleModalToggle}/>
                 </div>
                 <div className={Styles.footer}>
                     <p className={Styles.totalentry}>There are total 1000 members</p>
@@ -83,4 +86,8 @@ export default class MemberList extends Component {
             </div>
         );
     }
+}
+
+MemberList.propTypes = {
+    data: PropTypes.array
 }

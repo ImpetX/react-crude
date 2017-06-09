@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import {Table, TableHead, TableRow, TableCell} from 'react-toolbox/lib/table';
 import {IconMenu, MenuItem, MenuDivider} from 'react-toolbox/lib/menu';
 
-import {data} from './Tablemodel';
-
 import TableTheme from '../stylesheet/common/Theme/Table.css';
 import MenuTheme from '../stylesheet/common/Theme/Menu.css';
 
@@ -28,7 +26,7 @@ export default class ListTable extends Component {
     }
 
     getTableRow() {
-        return data.map((item, index) => {
+        return this.props.data.map((item, index) => {
             return (
                 <TableRow key={index}>
                     <TableCell>{item.name}</TableCell>
@@ -43,7 +41,6 @@ export default class ListTable extends Component {
     }
 
     render() {
-        console.log('TableTheme', TableTheme);
         return (
             <Table selectable={false} theme={TableTheme}>
                 <TableHead>
@@ -56,5 +53,6 @@ export default class ListTable extends Component {
 }
 
 ListTable.propTypes = {
-    onDeleteClick: React.PropTypes.func
+    onDeleteClick: PropTypes.func,
+    data: PropTypes.array
 }
