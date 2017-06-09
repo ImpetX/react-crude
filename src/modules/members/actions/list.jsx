@@ -1,5 +1,5 @@
 import ActionTypes from '../constants';
-import {ref} from 'Firebase/config';
+import {database} from 'Firebase/config';
 
 function isGetMemberAttempt() {
     return {
@@ -8,9 +8,10 @@ function isGetMemberAttempt() {
 }
 
 function isGetMemberSuccess(payload) {
+
     return {
         type: ActionTypes.GET_MEMBER_SUCCESS,
-        payload
+        payload: payload
     }
 }
 
@@ -25,11 +26,11 @@ function getMemberProcess() {
     return dispatch => {
         dispatch(isGetMemberAttempt());
 
-        let membersRef = ref.child('members');
+        let membersRef = database.ref('members');
 
         membersRef.once('value')
             .then(dataSnapshot => {
-                dispatch(isGetMemberSuccess(dataSnapshot));
+                dispatch(isGetMemberSuccess(dataSnapshot.val()));
             })
 
             .catch(error => {

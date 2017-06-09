@@ -26,21 +26,24 @@ export default class ListTable extends Component {
     }
 
     getTableRow() {
-        return this.props.data.map((item, index) => {
-            return (
-                <TableRow key={index}>
-                    <TableCell>{item.name}</TableCell>
-                    <TableCell>{item.contact}</TableCell>
-                    <TableCell>{item.bloodGroup}</TableCell>
-                    <TableCell>
-                        {this.actionMenu()}
-                    </TableCell>
-                </TableRow>
-            );
-        });
+        if(this.props.data) {
+            return this.props.data.map( el => {
+                return (
+                    <TableRow key={el}>
+                        <TableCell>{el}</TableCell>
+                        <TableCell>{el}</TableCell>
+                        <TableCell>{el}</TableCell>
+                        <TableCell>
+                            {this.actionMenu()}
+                        </TableCell>
+                    </TableRow>
+                );
+            });
+        }
     }
 
     render() {
+        console.log('Table props', this.props);
         return (
             <Table selectable={false} theme={TableTheme}>
                 <TableHead>
