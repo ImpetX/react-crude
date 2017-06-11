@@ -29,10 +29,10 @@ export default class ListTable extends Component {
         if(this.props.data) {
             return this.props.data.map( el => {
                 return (
-                    <TableRow key={el}>
-                        <TableCell>{el}</TableCell>
-                        <TableCell>{el}</TableCell>
-                        <TableCell>{el}</TableCell>
+                    <TableRow key={el.memberId}>
+                        <TableCell>{el.englishName}</TableCell>
+                        <TableCell>{el.mobileNumber}</TableCell>
+                        <TableCell>{el.bloodGroup}</TableCell>
                         <TableCell>
                             {this.actionMenu()}
                         </TableCell>

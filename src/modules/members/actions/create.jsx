@@ -48,6 +48,7 @@ function isMemberAddError(payload) {
 }
 
 function memberAddProcess(memberData) {
+    let date = Date.now();
     let arr = [];
     let inputIsNotEmpty = true;
 
@@ -79,8 +80,8 @@ function memberAddProcess(memberData) {
 
                 let membersRef = ref.child('members');
                 let newMemberRef = membersRef.push();
-
                 newMemberRef.set({
+                    memberId: date.toString(),
                     bengaliName: memberData.bengaliName,
                     englishName: memberData.englishName,
                     fatherName: memberData.fatherName,

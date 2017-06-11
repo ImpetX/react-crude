@@ -29,6 +29,7 @@ MemberListContainerClass.propTypes = {
 
 const mapStateToProps = state => {
     console.log('MemberList mapStateToProps', state);
+    
     return {
         members: state.members.list
     }
