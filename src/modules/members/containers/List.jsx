@@ -11,12 +11,20 @@ class MemberListContainerClass extends Component {
     componentWillMount() {
         this.props.getMemberProcess();
     }
+
+    showLoader() {
+        let shouldShowLoader = this.props.showLoader === true ? <Loader /> : null;
+
+        return shouldShowLoader;
+    }
+
     render() {
         return (
             <div>
                 <MemberList
                     data={this.props.members}
                 />
+                {this.showLoader()}
             </div>
         );
     }
@@ -24,14 +32,16 @@ class MemberListContainerClass extends Component {
 
 MemberListContainerClass.propTypes = {
     members: PropTypes.any,
-    getMemberProcess: PropTypes.any
+    getMemberProcess: PropTypes.any,
+    showLoader: PropTypes.bool
 };
 
 const mapStateToProps = state => {
     console.log('MemberList mapStateToProps', state);
-    
+
     return {
-        members: state.members.list
+        members: state.members.list,
+        showLoader: state.members.showLoader
     }
 }
 
