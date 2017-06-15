@@ -24,6 +24,17 @@ function isReadMemberError(payload) {
 function readMemberProcess(memberId) {
     return dispatch => {
         dispatch(isReadMemberPending());
+
+        let membersRef = ref.child('members');
+
+        membersRef.orderByChild('memberId').equalTo(memberId).once('value')
+            .then(snapshot => {
+                dispatch(isReadMemberSuccess(snapshot.val()));
+            })
+
+            .catch(error => {
+                dispatch(isReadMemberError(error));
+            });
     }
 }
 
