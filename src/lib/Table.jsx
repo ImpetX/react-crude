@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import {browserHistory} from 'react-router';
 import {Table, TableHead, TableRow, TableCell} from 'react-toolbox/lib/table';
 import {IconMenu, MenuItem, MenuDivider} from 'react-toolbox/lib/menu';
 
@@ -16,11 +17,20 @@ export default class ListTable extends Component {
             );
         });
     }
-    actionMenu() {
+
+    actionMenu(cb) {
         return (
             <IconMenu icon='more_vert' position='topLeft' menuRipple>
-                <MenuItem caption='Edit' theme={MenuTheme}/>
-                <MenuItem caption='Delete' theme={MenuTheme} onClick={this.props.onDeleteClick}/>
+                <MenuItem
+                    caption='Edit'
+                    theme={MenuTheme}
+                    onClick={cb}
+                />
+                <MenuItem
+                    caption='Delete'
+                    theme={MenuTheme}
+                    onClick={this.props.onDeleteClick}
+                />
             </IconMenu>
         );
     }
@@ -34,7 +44,10 @@ export default class ListTable extends Component {
                         <TableCell>{el.mobileNumber}</TableCell>
                         <TableCell>{el.bloodGroup}</TableCell>
                         <TableCell>
-                            {this.actionMenu()}
+                            {this.actionMenu(() =>  {
+                                console.log('member details route', el.memberId);
+                                return browserHistory.push('#/members/' + el.memberId);
+                            })}
                         </TableCell>
                     </TableRow>
                 );
