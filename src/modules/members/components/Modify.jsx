@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import Input from 'react-toolbox/lib/input';
 import Dropdown from 'react-toolbox/lib/dropdown';
 import DatePicker from 'react-toolbox/lib/date_picker';
@@ -21,24 +22,24 @@ export default class MemberModify extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            nameBengali : '',
-            nameEnglish : '',
-            fatherName: '',
-            motherName: '',
-            presentAddress: '',
-            permanentAddress: '',
-            occupation: '',
-            mobileNumber: '',
-            maritalStatus: '',
-            nationality: '',
-            religion: '',
-            bloodGroup:'',
-            referrerName: '',
-            referrerContact: '',
-            dateOfBirth: '',
-            certificateType: '',
-            idNumber: '',
-            membershipDate: ''
+            nameBengali : props.member.bengaliName,
+            nameEnglish : props.member.englishName,
+            fatherName: props.member.fatherName,
+            motherName: props.member.motherName,
+            presentAddress: props.member.presentAddress,
+            permanentAddress: props.member.permanentAddress,
+            occupation: props.member.occupation,
+            mobileNumber: props.member.mobileNumber,
+            maritalStatus: props.member.maritalStatus,
+            nationality: props.member.nationality,
+            religion: props.member.religion,
+            bloodGroup: props.member.bloodGroup,
+            referrerName: props.member.referrerName,
+            referrerContact: props.member.referrerContact,
+            dateOfBirth: props.member.birthDate,
+            certificateType: props.member.certificateType,
+            idNumber: props.member.certificateNumber,
+            membershipDate: props.member.membershipDate
         };
 
         this.handleNameBengaliChange = this.handleChange.bind(this, 'nameBengali');
@@ -423,3 +424,7 @@ export default class MemberModify extends Component {
         );
     }
 }
+
+MemberModify.propTypes = {
+    member: PropTypes.object
+};

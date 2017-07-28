@@ -68,7 +68,7 @@ export default class MemberList extends Component {
                         onDeleteClick={this.handleModalToggle}/>
                 </div>
                 <div className={Styles.footer}>
-                    <p className={Styles.totalentry}>There are total 1000 members</p>
+                    <p className={Styles.totalentry}>There are total {this.props.data !== undefined ? this.props.data.length : 0} members</p>
                     <div>
                         <Pagination />
                     </div>
