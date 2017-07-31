@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {browserHistory} from 'react-router';
+import {hashHistory} from 'react-router';
 import {Table, TableHead, TableRow, TableCell} from 'react-toolbox/lib/table';
 import {IconMenu, MenuItem, MenuDivider} from 'react-toolbox/lib/menu';
 
@@ -46,7 +46,7 @@ export default class ListTable extends Component {
                         <TableCell>
                             {this.actionMenu(() =>  {
                                 console.log('member details route', el.memberId);
-                                return browserHistory.push('#/members/' + el.memberId);
+                                return hashHistory.push('/members/' + el.memberId);
                             })}
                         </TableCell>
                     </TableRow>

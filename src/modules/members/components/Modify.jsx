@@ -5,7 +5,7 @@ import Dropdown from 'react-toolbox/lib/dropdown';
 import DatePicker from 'react-toolbox/lib/date_picker';
 import {Button, BrowseButton} from "react-toolbox/lib/button";
 
-
+import {convertStringToDateObject} from 'modules/common/utils';
 import PageHeading from '../../../lib/pageheader/PageHeading';
 
 
@@ -163,6 +163,9 @@ export default class MemberModify extends Component {
     }
 
     render() {
+        let dateOfBirth = convertStringToDateObject(this.state.dateOfBirth);
+        let membershipDate = convertStringToDateObject(this.state.membershipDate);
+        console.log('member modify components state ||| >>>', this.state);
         return (
             <div>
                 <div className={Styles['header-wrapper']}>
@@ -266,7 +269,7 @@ export default class MemberModify extends Component {
                                 <DatePicker
                                     label='Birthdate'
                                     onChange={this.handleDateOfBirthChange}
-                                    value={this.state.dateOfBirth}
+                                    value={dateOfBirth}
                                     theme={DatepickerTheme}
                                 />
                             </div>
@@ -359,7 +362,7 @@ export default class MemberModify extends Component {
                                 <DatePicker
                                     label='Membership date'
                                     onChange={this.handleMembershipDateChange}
-                                    value={this.state.membershipDate}
+                                    value={membershipDate}
                                     theme={DatepickerTheme}
                                 />
                             </div>

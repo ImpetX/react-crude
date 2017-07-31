@@ -28,15 +28,15 @@ class MemberModifyContainerClass extends Component {
 MemberModifyContainerClass.propTypes = {
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
     return {
         member: state.memberModify.selectedMember
     }
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
     return {
-        readMember: (memberId) => dispatch(readMemberProcess(memberId))
+        readMember: memberId => dispatch(readMemberProcess(memberId))
     }
 };
 

@@ -6,8 +6,12 @@ function getFirstArrayElement(arr) {
     return arr[0];
 }
 
+function convertStringToDateObject(str) {
+    return new Date(str);
+}
 
 export {
     convertObjToArray,
-    getFirstArrayElement
+    getFirstArrayElement,
+    convertStringToDateObject
 }
