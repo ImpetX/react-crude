@@ -53,6 +53,7 @@ export default class MemberList extends Component {
     }
 
     render() {
+        console.log('MemberList props ==>>', this.props);
         return (
             <div>
                 <div className={Styles['header-wrapper']}>

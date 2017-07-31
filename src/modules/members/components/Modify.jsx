@@ -179,7 +179,7 @@ export default class MemberModify extends Component {
                                     type='text'
                                     label='Name [Bengali]'
                                     theme={InputTheme}
-                                    value={this.state.namesBengali}
+                                    value={this.state.nameBengali}
                                     onChange={this.handleNameBengaliChange}
                                 />
                             </div>
@@ -189,7 +189,7 @@ export default class MemberModify extends Component {
                                     type='text'
                                     label='Name [English]'
                                     theme={InputTheme}
-                                    value={this.state.namesEnglish}
+                                    value={this.state.nameEnglish}
                                     onChange={this.handleNameEnglishChange}
                                 />
                             </div>

@@ -1,4 +1,5 @@
 import ActionTypes from '../constants';
+import {convertObjToArray, getFirstArrayElement} from 'modules/common/utils';
 
 const defaultState = {};
 
@@ -12,7 +13,7 @@ const MemberModifyReducer = (state = defaultState, action) => {
         case ActionTypes.READ_MEMBER_SUCCESS:
             return Object.assign({}, state, {
                 showLoader: false,
-                selectedMember: action.payload
+                selectedMember: getFirstArrayElement(convertObjToArray(action.payload))
             });
 
         case ActionTypes.READ_MEMBER_ERROR:
