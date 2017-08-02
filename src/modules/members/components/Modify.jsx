@@ -39,7 +39,8 @@ export default class MemberModify extends Component {
             dateOfBirth: props.member.birthDate,
             certificateType: props.member.certificateType,
             idNumber: props.member.certificateNumber,
-            membershipDate: props.member.membershipDate
+            membershipDate: props.member.membershipDate,
+            memberImage: props.member.memberImage
         };
 
         this.handleNameBengaliChange = this.handleChange.bind(this, 'nameBengali');
@@ -166,6 +167,7 @@ export default class MemberModify extends Component {
         let dateOfBirth = convertStringToDateObject(this.state.dateOfBirth);
         let membershipDate = convertStringToDateObject(this.state.membershipDate);
         console.log('member modify components state ||| >>>', this.state);
+        console.log('memberImage debugger', this.state.memberImage);
         return (
             <div>
                 <div className={Styles['header-wrapper']}>
@@ -370,7 +372,7 @@ export default class MemberModify extends Component {
 
                         <div className={Styles.inputs}>
                             <div className={Styles.filepreview}>
-                                <img src='' alt='' className={Styles.profileimg}/>
+                                <img src={this.state.memberImage} alt='' className={Styles.profileimg}/>
                             </div>
 
                             <div className={Styles.fileupload}>
