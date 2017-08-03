@@ -11,16 +11,25 @@ class MemberModifyContainerClass extends Component {
         this.props.readMember(this.props.params._id);
     }
 
+    showLoader() {
+        let shouldShowLoader = this.props.showLoader === true ? <Loader /> : null;
+
+        return shouldShowLoader;
+    }
+
     render() {
         console.log('memberModify container props ===>>>', this.props);
         console.log('memberModify container memberId ===>>>',this.props.member);
         let shouldRender = (this.props.member && this.props.params._id == this.props.member.memberId);
         return (
-            shouldRender ?
+            <div>
+                {shouldRender ?
                 <MemberModify
                     member={this.props.member}
                 />
-               : <p>Loading...</p>
+               : this.showLoader()}
+            </div>
+            
         );
     }
 }
@@ -30,7 +39,8 @@ MemberModifyContainerClass.propTypes = {
 
 const mapStateToProps = state => {
     return {
-        member: state.memberModify.selectedMember
+        member: state.memberModify.selectedMember,
+        showLoader: state.memberModify.showLoader
     }
 };
 
