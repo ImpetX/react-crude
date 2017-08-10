@@ -21,6 +21,25 @@ function isReadMemberError(payload) {
     }
 }
 
+function isUpdateMemberPending() {
+    return {
+        type: ActionTypes.UPDATE_MEMBER_PENDING
+    }
+}
+
+function isUpdateMemberSuccess() {
+    return {
+        type: ActionTypes.UPDATE_MEMBER_SUCCESS
+    }
+}
+
+function isUpdateMemberError(payload) {
+    return {
+        type: ActionTypes.UPDATE_MEMBER_ERROR,
+        payload
+    }
+}
+
 function readMemberProcess(memberId) {
     return dispatch => {
         dispatch(isReadMemberPending());
@@ -38,6 +57,24 @@ function readMemberProcess(memberId) {
     }
 }
 
+function updateMemberProcess(memberId, objOfUpdatedProps) {
+    return dispatch => {
+        dispatch(isUpdateMemberPending());
+
+        let membersRef = ref.child('members');
+
+        membersRef.orderByChild('memberId').equalTo(memberId).update(objOfUpdatedProps)
+            .then(() => {
+                dispatch(isUpdateMemberSuccess());
+            })
+
+            .catch(error => {
+                dispatch(isUpdateMemberError(error));
+            });
+    }
+}
+
 export {
-    readMemberProcess
+    readMemberProcess,
+    updateMemberProcess
 }
