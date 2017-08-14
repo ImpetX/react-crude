@@ -24,17 +24,20 @@ class MemberModifyContainerClass extends Component {
         return (
             <div>
                 {shouldRender ?
-                <MemberModify
-                    member={this.props.member}
-                />
+                    <MemberModify
+                        member={this.props.member}
+                    />
                : this.showLoader()}
-            </div>
-            
+            </div>          
         );
     }
 }
 
 MemberModifyContainerClass.propTypes = {
+    readMember: PropTypes.func,
+    params: PropTypes.object,
+    showLoader: PropTypes.bool,
+    member: PropTypes.object
 };
 
 const mapStateToProps = state => {
