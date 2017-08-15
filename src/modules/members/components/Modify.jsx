@@ -61,6 +61,7 @@ export default class MemberModify extends Component {
         this.handleCertificateTypeChange = this.handleChange.bind(this, 'certificateType');
         this.handleIdNumberChange = this.handleChange.bind(this, 'idNumber');
         this.handleMembershipDateChange = this.handleChange.bind(this, 'membershipDate');
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     getMaritalStatusSource() {
@@ -160,7 +161,55 @@ export default class MemberModify extends Component {
     }
 
     handleFileUpload(e) {
-        return e.target.files[0];
+        e.preventDefault();
+
+        let reader = new FileReader();
+        let file = e.target.files[0];
+
+        reader.onload = () => {
+            this.setState(
+                {
+                    memberImageMetadata: file,
+                    memberImage: reader.result
+                }
+            );
+        }
+
+        reader.readAsDataURL(file);
+    }
+
+    getMemberCreateObj() {
+        let valuesObj = {
+            bengaliName: this.state.nameBengali,
+            englishName: this.state.nameEnglish,
+            fatherName: this.state.fatherName,
+            motherName: this.state.motherName,
+            presentAddress: this.state.presentAddress,
+            permanentAddress: this.state.permanentAddress,
+            occupation: this.state.occupation,
+            mobileNumber: this.state.mobileNumber,
+            birthDate: this.state.dateOfBirth,
+            maritalStatus: this.state.maritalStatus,
+            nationality: this.state.nationality,
+            religion: this.state.religion,
+            bloodGroup: this.state.bloodGroup,
+            referrerName: this.state.referrerName,
+            referrerContact: this.state.referrerContact,
+            certificateType: this.state.certificateType,
+            certificateNumber: this.state.idNumber,
+            membershipDate: this.state.membershipDate,
+            memberImage: this.state.memberImageMetadata
+        };
+
+        return valuesObj;
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+
+        let memberObj = this.getMemberCreateObj();
+
+        this.props.updateMember(this.props.member.memberId, memberObj);
     }
 
     render() {
@@ -177,7 +226,7 @@ export default class MemberModify extends Component {
                 <p className={Styles['required-notif']}>**All the fields are required.</p>
 
                 <div>
-                    <form>
+                    <form onSubmit={this.handleSubmit}>
                         <div className={Styles.inputs}>
                             <div className={Styles.names}>
                                 <Input
@@ -431,5 +480,6 @@ export default class MemberModify extends Component {
 }
 
 MemberModify.propTypes = {
-    member: PropTypes.object
+    member: PropTypes.object,
+    updateMember: PropTypes.func
 };
