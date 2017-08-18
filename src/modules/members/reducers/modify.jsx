@@ -22,6 +22,25 @@ const MemberModifyReducer = (state = defaultState, action) => {
                 errorCode: action.payload
             });
 
+        case ActionTypes.UPDATE_MEMBER_PENDING:
+            return Object.assign({}, state, {
+                showLoader: true,
+                updateStatus: false
+            });
+
+        case ActionTypes.UPDATE_MEMBER_SUCCESS:
+            return Object.assign({}, state, {
+                showLoader: false,
+                updateStatus: true
+            });
+
+        case ActionTypes.UPDATE_MEMBER_ERROR:
+            return Object.assign({}, state, {
+                showLoader: false,
+                updateStatus: false,
+                errorCode: action.payload
+            });
+
         default:
             return state;
     }
