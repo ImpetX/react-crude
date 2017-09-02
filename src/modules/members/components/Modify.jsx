@@ -440,6 +440,7 @@ export default class MemberModify extends Component {
                                 <Button
                                   icon="save"
                                   label="Save"
+                                  type='submit'
                                   raised
                                   theme={SaveButtonTheme}
                                 />

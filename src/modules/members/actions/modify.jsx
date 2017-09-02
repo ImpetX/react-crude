@@ -1,5 +1,5 @@
 import ActionTypes from '../constants';
-import {ref} from 'Firebase/config';
+import {database, ref} from 'Firebase/config';
 
 function isReadMemberPending() {
     return {
@@ -63,14 +63,41 @@ function updateMemberProcess(memberId, objOfUpdatedProps) {
 
         let membersRef = ref.child('members');
 
-        membersRef.orderByChild('memberId').equalTo(memberId).update(objOfUpdatedProps)
+        // membersRef.orderByChild('memberId').equalTo(memberId).once('value')
+        //     .then(snapshot => {
+        //         snapshot.val().update(objOfUpdatedProps)
+        //             .then(() => {
+        //                 dispatch(isUpdateMemberSuccess());
+        //             })
+
+        //             .catch(error => {
+        //                 dispatch(isUpdateMemberError(error));
+        //             });
+        //     })
+
+        //     .catch(error => {
+        //         dispatch(isUpdateMemberError(error));
+        //     });
+
+        membersRef.orderByChild('memberId').equalTo(memberId).once('value')
+        .then(snapshot => {
+            let targetNode =  Object.keys(snapshot.val())[0];
+
+            delete objOfUpdatedProps['memberImage'];
+
+            database.ref(`/members/${targetNode}`).update(objOfUpdatedProps)
             .then(() => {
                 dispatch(isUpdateMemberSuccess());
             })
-
+         
             .catch(error => {
                 dispatch(isUpdateMemberError(error));
             });
+        })
+
+        .catch(error => {
+            dispatch(isUpdateMemberError(error));
+        });
     }
 }
 

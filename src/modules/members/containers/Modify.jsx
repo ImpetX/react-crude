@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {hashHistory} from 'react-router';
 
-import {readMemberProcess} from '../actions';
+import {readMemberProcess, updateMemberProcess} from '../actions';
 import MemberModify from '../components/Modify';
 import Loader from 'lib/Loader';
 
@@ -75,7 +75,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         readMember: memberId => dispatch(readMemberProcess(memberId)),
-        updateMember: (memberId, memberObj) => dispatch(updateMember(memberId, memberObj))
+        updateMember: (memberId, memberObj) => dispatch(updateMemberProcess(memberId, memberObj))
     }
 };
 
