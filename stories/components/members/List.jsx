@@ -25,7 +25,6 @@ export default class MemberList extends Component {
         this.setState(prevState => ({
             modalShow: !prevState.modalShow
         }));
-        console.log('this.state.modalShow', this.state.modalShow);
     }
 
     getModalActions() {

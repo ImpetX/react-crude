@@ -45,7 +45,6 @@ export default class ListTable extends Component {
                         <TableCell>{el.bloodGroup}</TableCell>
                         <TableCell>
                             {this.actionMenu(() =>  {
-                                console.log('member details route', el.memberId);
                                 return hashHistory.push('/members/' + el.memberId);
                             })}
                         </TableCell>
@@ -56,7 +55,6 @@ export default class ListTable extends Component {
     }
 
     render() {
-        console.log('Table props', this.props);
         return (
             <Table selectable={false} theme={TableTheme}>
                 <TableHead>

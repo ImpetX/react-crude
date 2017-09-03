@@ -55,13 +55,11 @@ function memberAddProcess(memberData) {
     for (let key in memberData) {
         if (memberData.hasOwnProperty(key)) {
             if (memberData[key] === '') {
-                console.log('key', key);
                 arr.push(key);
             }
         }
     }
 
-    console.log('arr ===>', arr);
     if (arr.length > 0) {
         inputIsNotEmpty = false;
     }
@@ -70,7 +68,6 @@ function memberAddProcess(memberData) {
         dispatch(isMemberAddAttempt());
 
         if (inputIsNotEmpty) {
-            console.log('inputIsNotEmpty ==>');
             let imageRef = storageRef.child('images');
             let memberImageRef = imageRef.child(`${memberData.memberImage.name}`);
             let uploadImage = memberImageRef.put(memberData.memberImage);

@@ -43,7 +43,6 @@ export default class ListTable extends Component {
     }
 
     render() {
-        console.log('TableTheme', TableTheme);
         return (
             <Table selectable={false} theme={TableTheme}>
                 <TableHead>

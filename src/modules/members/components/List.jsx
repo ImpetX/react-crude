@@ -27,7 +27,6 @@ export default class MemberList extends Component {
         this.setState(prevState => ({
             modalShow: !prevState.modalShow
         }));
-        console.log('this.state.modalShow', this.state.modalShow);
     }
 
     getModalActions() {
@@ -53,7 +52,6 @@ export default class MemberList extends Component {
     }
 
     render() {
-        console.log('MemberList props ==>>', this.props);
         return (
             <div>
                 <div className={Styles['header-wrapper']}>

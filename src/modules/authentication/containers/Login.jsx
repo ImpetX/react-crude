@@ -81,7 +81,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         getValuesOnSubmit: (email, password) => {
-            console.log('email, password', email, password);
             dispatch(attemptToLogin(email, password));
         }
     };

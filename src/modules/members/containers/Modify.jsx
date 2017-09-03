@@ -26,15 +26,6 @@ class MemberModifyContainerClass extends Component {
 
     updateMember(memberId, memberObj) {
         this.props.updateMember(memberId, memberObj);
-
-        if(!this.props.updateStatus) {
-            console.warn('Member update error', this.props.errorMessage);
-        }
-
-        else {
-            hashHistory.push('/members');
-            console.log('===>>> Member updated successfully');
-        }
     }
 
     deleteMember() {
@@ -42,8 +33,6 @@ class MemberModifyContainerClass extends Component {
     }
 
     render() {
-        console.log('memberModify container props ===>>>', this.props);
-        console.log('memberModify container memberId ===>>>',this.props.member);
         let shouldRender = (this.props.member && this.props.params._id == this.props.member.memberId);
         return (
             <div>
@@ -66,7 +55,6 @@ MemberModifyContainerClass.propTypes = {
     member: PropTypes.object,
     updateMember: PropTypes.func,
     deleteMember: PropTypes.func,
-    updateStatus: PropTypes.bool,
     errorMessage: PropTypes.object
 };
 

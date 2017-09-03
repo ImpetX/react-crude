@@ -220,8 +220,7 @@ export default class MemberModify extends Component {
     render() {
         let dateOfBirth = convertStringToDateObject(this.state.dateOfBirth);
         let membershipDate = convertStringToDateObject(this.state.membershipDate);
-        console.log('member modify components state ||| >>>', this.state);
-        console.log('memberImage debugger', this.state.memberImage);
+        
         return (
             <div>
                 <div className={Styles['header-wrapper']}>

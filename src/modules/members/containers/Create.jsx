@@ -22,7 +22,7 @@ class MemberCreateContainerClass extends Component {
     handleSubmit(e) {
         e.preventDefault();
         const memberData = this.memberCreateComponentRef.getMemberCreateObj();
-        console.log('container memberData', memberData);
+
         this.props.getMemberCreateObjOnSubmit(memberData);
     }
 
@@ -43,7 +43,6 @@ class MemberCreateContainerClass extends Component {
     }
 
     handleFormValidation() {
-        console.log('this.props.emptyInput ====>>>', this.props.emptyInput);
         let errorMessages = [];
 
         if(this.props.emptyInput !== undefined) {
@@ -106,7 +105,6 @@ class MemberCreateContainerClass extends Component {
 
     componentDidUpdate() {
         if(this.props.fieldReset !== undefined) {
-            console.log('componentDidUpdate called');
             this.memberCreateComponentRef.setState(
                 initialState
             )
@@ -114,7 +112,6 @@ class MemberCreateContainerClass extends Component {
     }
 
     render() {
-        console.log('this.handleFormValidation() ===>>>', this.handleFormValidation());
         return (
             <div>
                 <MemberCreate

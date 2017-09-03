@@ -202,8 +202,6 @@ export default class MemberCreate extends Component {
     render() {
         let {memberImageMetadata} = this.state;
 
-        console.log('MemberCreate state', typeof this.state.membershipDate);
-
         return (
             <div>
                 <div className={Styles['header-wrapper']}>
