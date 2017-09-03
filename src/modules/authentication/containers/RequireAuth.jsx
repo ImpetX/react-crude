@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {hashHistory} from 'react-router';
 
+// React Higher Order Component
 function RequireAuth(WrappedComponent) {
     class Auth extends Component {
         componentWillMount() {

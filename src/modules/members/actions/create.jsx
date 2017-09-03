@@ -48,6 +48,7 @@ function isMemberAddError(payload) {
 }
 
 function memberAddProcess(memberData) {
+    // build up the array of input labels whose correspondinf inputs are emptry
     let date = Date.now();
     let arr = [];
     let inputIsNotEmpty = true;
@@ -78,7 +79,7 @@ function memberAddProcess(memberData) {
                 let membersRef = ref.child('members');
                 let newMemberRef = membersRef.push();
                 newMemberRef.set({
-                    memberId: date.toString(),
+                    memberId: date.toString(), // Firebase database only stores strings
                     bengaliName: memberData.bengaliName,
                     englishName: memberData.englishName,
                     fatherName: memberData.fatherName,
