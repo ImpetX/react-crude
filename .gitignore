@@ -127,4 +127,5 @@ typings
 npm-debug.log.*
 
 # react-storybook
+storybook-static
 
