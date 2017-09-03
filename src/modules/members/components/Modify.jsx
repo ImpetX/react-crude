@@ -198,7 +198,7 @@ export default class MemberModify extends Component {
             certificateType: this.state.certificateType,
             certificateNumber: this.state.idNumber,
             membershipDate: this.state.membershipDate,
-            memberImage: this.state.memberImageMetadata
+            memberImage: this.state.memberImage
         };
 
         return valuesObj;

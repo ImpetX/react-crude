@@ -63,33 +63,15 @@ function updateMemberProcess(memberId, objOfUpdatedProps) {
 
         let membersRef = ref.child('members');
 
-        // membersRef.orderByChild('memberId').equalTo(memberId).once('value')
-        //     .then(snapshot => {
-        //         snapshot.val().update(objOfUpdatedProps)
-        //             .then(() => {
-        //                 dispatch(isUpdateMemberSuccess());
-        //             })
-
-        //             .catch(error => {
-        //                 dispatch(isUpdateMemberError(error));
-        //             });
-        //     })
-
-        //     .catch(error => {
-        //         dispatch(isUpdateMemberError(error));
-        //     });
-
         membersRef.orderByChild('memberId').equalTo(memberId).once('value')
         .then(snapshot => {
             let targetNode =  Object.keys(snapshot.val())[0];
-
-            delete objOfUpdatedProps['memberImage'];
 
             database.ref(`/members/${targetNode}`).update(objOfUpdatedProps)
             .then(() => {
                 dispatch(isUpdateMemberSuccess());
             })
-         
+
             .catch(error => {
                 dispatch(isUpdateMemberError(error));
             });
