@@ -62,6 +62,7 @@ export default class MemberModify extends Component {
         this.handleIdNumberChange = this.handleChange.bind(this, 'idNumber');
         this.handleMembershipDateChange = this.handleChange.bind(this, 'membershipDate');
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.deleteMember = this.deleteMember.bind(this);
     }
 
     getMaritalStatusSource() {
@@ -202,6 +203,10 @@ export default class MemberModify extends Component {
         };
 
         return valuesObj;
+    }
+
+    deleteMember() {
+        this.props.deleteMember();
     }
 
     handleSubmit(e) {
@@ -470,6 +475,7 @@ export default class MemberModify extends Component {
                                   label="Delete"
                                   raised
                                   theme={DeleteButtonTheme}
+                                  onClick={this.deleteMember}
                                 />
                             </div>
                         </div>
@@ -482,5 +488,6 @@ export default class MemberModify extends Component {
 
 MemberModify.propTypes = {
     member: PropTypes.object,
-    updateMember: PropTypes.func
+    updateMember: PropTypes.func,
+    deleteMember: PropTypes.func
 };

@@ -41,6 +41,22 @@ const MemberModifyReducer = (state = defaultState, action) => {
                 errorCode: action.payload
             });
 
+        case ActionTypes.DELETE_MEMBER_PENDING:
+            return Object.assign({}, state, {
+                showLoader: true
+            });
+
+        case ActionTypes.DELETE_MEMBER_SUCCESS:
+            return Object.assign({}, state, {
+                showLoader: false
+            });
+
+        case ActionTypes.DELETE_MEMBER_ERROR:
+            return Object.assign({}, state, {
+                showLoader: false,
+                errorCode: action.payload.code
+            });
+
         default:
             return state;
     }

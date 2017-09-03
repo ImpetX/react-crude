@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {hashHistory} from 'react-router';
 
-import {readMemberProcess, updateMemberProcess} from '../actions';
+import {readMemberProcess, updateMemberProcess, deleteMemberProcess} from '../actions';
 import MemberModify from '../components/Modify';
 import Loader from 'lib/Loader';
 
@@ -12,6 +12,7 @@ class MemberModifyContainerClass extends Component {
         super(props);
 
         this.updateMember = this.updateMember.bind(this);
+        this.deleteMember = this.deleteMember.bind(this);
     }
     componentWillMount() {
         this.props.readMember(this.props.params._id);
@@ -36,6 +37,10 @@ class MemberModifyContainerClass extends Component {
         }
     }
 
+    deleteMember() {
+        this.props.deleteMember(this.props.params._id);
+    }
+
     render() {
         console.log('memberModify container props ===>>>', this.props);
         console.log('memberModify container memberId ===>>>',this.props.member);
@@ -46,6 +51,7 @@ class MemberModifyContainerClass extends Component {
                     <MemberModify
                         member={this.props.member}
                         updateMember={this.updateMember}
+                        deleteMember={this.deleteMember}
                     />
                : this.showLoader()}
             </div>          
@@ -59,6 +65,7 @@ MemberModifyContainerClass.propTypes = {
     showLoader: PropTypes.bool,
     member: PropTypes.object,
     updateMember: PropTypes.func,
+    deleteMember: PropTypes.func,
     updateStatus: PropTypes.bool,
     errorMessage: PropTypes.object
 };
@@ -75,7 +82,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         readMember: memberId => dispatch(readMemberProcess(memberId)),
-        updateMember: (memberId, memberObj) => dispatch(updateMemberProcess(memberId, memberObj))
+        updateMember: (memberId, memberObj) => dispatch(updateMemberProcess(memberId, memberObj)),
+        deleteMember: memberId => dispatch(deleteMemberProcess(memberId))
     }
 };
 

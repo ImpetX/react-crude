@@ -1,10 +1,11 @@
 import memberAddProcess from './create';
 import getMemberProcess from './list';
-import {readMemberProcess, updateMemberProcess} from './modify';
+import {readMemberProcess, updateMemberProcess, deleteMemberProcess} from './modify';
 
 export {
     memberAddProcess,
     getMemberProcess,
     readMemberProcess,
-    updateMemberProcess
+    updateMemberProcess,
+    deleteMemberProcess
 };

@@ -40,6 +40,25 @@ function isUpdateMemberError(payload) {
     }
 }
 
+function isDeleteMemberPending() {
+    return {
+        type: ActionTypes.DELETE_MEMBER_PENDING
+    }
+}
+
+function isDeleteMemberSuccess() {
+    return {
+        type: ActionTypes.DELETE_MEMBER_SUCCESS
+    }
+}
+
+function isDeleteMemberError(payload) {
+    return {
+        type: ActionTypes.DELETE_MEMBER_ERROR,
+        payload
+    }
+}
+
 function readMemberProcess(memberId) {
     return dispatch => {
         dispatch(isReadMemberPending());
@@ -83,7 +102,30 @@ function updateMemberProcess(memberId, objOfUpdatedProps) {
     }
 }
 
+function deleteMemberProcess(memberId) {
+    return dispatch => {
+        dispatch(isDeleteMemberPending());
+
+        let membersRef = ref.child('members');
+
+        membersRef.orderByChild('memberId').equalTo(memberId).once('value')
+            .then(snapshot => {
+                let targetNode = Object.keys(snapshot.val())[0];
+
+                database.ref(`/members/${targetNode}`).remove()
+                    .then(() => {
+                        dispatch(isDeleteMemberSuccess());
+                    })
+
+                    .catch(error => {
+                        dispatch(isDeleteMemberError(error));
+                    });
+            })
+    }
+}
+
 export {
     readMemberProcess,
-    updateMemberProcess
+    updateMemberProcess,
+    deleteMemberProcess
 }
