@@ -37,6 +37,12 @@ To open the project in the browser run- <br>
 
 The project will automatically open in `http://127.0.0.1:7000`
 
+## Login credential
+```
+Email: admin@example.com
+Password: 123456
+```
+
 ## For React-Storybook development
 
 To build the storybook run - <br>
